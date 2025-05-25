@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shia and Dunya - Exploring Islamic Scientific Heritage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: #0a0a0a;
+            color: #e5e5e5;
+            transition: all 0.3s ease;
+        }
+        
+        body.light-mode {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .light-mode .bg-deep-black {
+            background-color: #f5f5f5;
+        }
+        
+        .light-mode .bg-dark-red {
+            background-color: #f8f1e5;
+        }
+        
+        .light-mode .text-gold-100,
+        .light-mode .gold-text {
+            color: #8b4513; /* Darker gold/brown for better contrast */
+        }
+        
+        .light-mode .red-text {
+            color: #8b0000;
+        }
+        
+        .light-mode .course-card,
+        .light-mode .testimonial-card,
+        .light-mode .feature-card {
+            background-color: #ffffff;
+            border-color: #ddd;
+            color: #333;
+        }
+        
+        .light-mode .footer-bg {
+            background-color: #e5e5e5;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://i.pinimg.com/736x/f1/b8/c1/f1b8c1c2d9321da888be9d75e49f4a59.jpg');
+            background-size: cover;
+            background-position: center;
+            border-bottom: 1px solid #b8860b;
+        }
+        
+        .light-mode .hero-section {
+            background: linear-gradient(rgba(245, 245, 245, 0.8), rgba(245, 245, 245, 0.8)), url('https://i.pinimg.com/736x/f1/b8/c1/f1b8c1c2d9321da888be9d75e49f4a59.jpg');
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(184, 134, 11, 0.2);
+            border-color: #b8860b;
+        }
+        
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+        
+        .serif {
+            font-family: 'Cinzel', serif;
+        }
+        
+        .gold-text {
+            color: #b8860b;
+        }
+        
+        .red-text {
+            color: #8b0000;
+        }
+        
+        .bg-deep-black {
+            background-color: #0a0a0a;
+        }
+        
+        .bg-dark-red {
+            background-color: #450a0a;
+        }
+        
+        .border-gold {
+            border-color: #b8860b;
+        }
+        
+        .hover-gold:hover {
+            color: #b8860b;
+        }
+        
+        .hover-red:hover {
+            color: #8b0000;
+        }
+        
+        .course-card {
+            background-color: #171717;
+            border: 1px solid #262626;
+        }
+        
+        .course-card:hover {
+            border-color: #b8860b;
+        }
+        
+        .testimonial-card {
+            background-color: #171717;
+            border: 1px solid #262626;
+        }
+        
+        .footer-bg {
+            background-color: #050505;
+            border-top: 1px solid #b8860b;
+        }
+        
+        .theme-toggle {
+            background-color: #450a0a;
+            color: #b8860b;
+            border: 1px solid #b8860b;
+        }
+        
+        .light-mode .theme-toggle {
+            background-color: #8b4513;
+            color: #f8f1e5;
+            border: 1px solid #8b4513;
+        }
+    </style>
+</head>
+<body class="bg-deep-black">
+    <!-- Top Bar -->
+    
+    
+    <header class="bg-deep-black shadow-sm border-b border-gold">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+               
+        <nav class="hidden md:flex space-x-8">
+            <a href="#" class="text-gold-100 hover-gold font-medium">Home</a>
+            <a href="#" class="text-gold-100 hover-gold font-medium">About</a>
+            <div class="dropdown relative">
+                <button class="text-gold-100 hover-gold font-medium flex items-center">
+                    Topics <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                </button>
+                <div class="dropdown-menu absolute hidden bg-deep-black shadow-lg rounded mt-2 py-2 w-48 border border-gold">
+                    <a href="#" class="block px-4 py-2 hover:bg-dark-red">Mathematics</a>
+                    <a href="#" class="block px-4 py-2 hover:bg-dark-red">Astronomy</a>
+                    <a href="#" class="block px-4 py-2 hover:bg-dark-red">Medicine</a>
+                    <a href="#" class="block px-4 py-2 hover:bg-dark-red">Engineering</a>
+                </div>
+            </div>
+            <a href="#" class="text-gold-100 hover-gold font-medium">Scholars</a>
+            <a href="books.html" class="text-gold-100 hover-gold font-medium">Resources</a>
+            <a href="#" class="text-gold-100 hover-gold font-medium">Contact</a>
+        </nav>
+        
+        <div class="flex items-center space-x-4">
+            <button class="md:hidden text-gold-100">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+            <button id="themeToggle" class="theme-toggle px-4 py-2 rounded-full font-medium transition-all">
+                <i class="fas fa-moon"></i> <span class="hidden md:inline">Dark Mode</span>
+            </button>
+        </div>
+    </div>
+</header>
+    
+    <!-- Hero Section -->
+    <section class="hero-section text-gold-100 py-24">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 serif gold-text">Exploring Islamic Scientific Heritage</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Discover the rich contributions of Muslim scholars to modern science and knowledge</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#" class="bg-dark-red hover:bg-red-900 text-gold-100 px-8 py-3 rounded-full font-medium transition-all border border-gold">
+                    Explore Topics
+                </a>
+                <a href="#articles" class="bg-transparent hover:bg-dark-red text-gold-100 px-8 py-3 rounded-full font-medium transition-all border border-gold">
+                    Featured Articles
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Featured Articles Section -->
+    <section class="py-16 bg-deep-black">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold gold-text mb-4 serif">Featured Articles</h2>
+                <p class="text-gold-100 max-w-2xl mx-auto">Discover our most popular articles on Islamic scientific heritage</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="feature-card course-card p-8 rounded-lg transition-all border border-transparent">
+                    <div class="gold-text mb-4">
+                        <i class="fas fa-square-root-alt text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 gold-text">The Algebra of Al-Khwarizmi</h3>
+                    <p class="text-gold-100 mb-4">How the father of algebra revolutionized mathematics with his systematic approach to solving equations.</p>
+                    <a href="#" class="inline-block text-sm gold-text hover:underline">Read More →</a>
+                </div>
+                
+                <div class="feature-card course-card p-8 rounded-lg transition-all border border-transparent">
+                    <div class="gold-text mb-4">
+                        <i class="fas fa-eye-dropper text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 gold-text">Ibn Sina's Canon of Medicine</h3>
+                    <p class="text-gold-100 mb-4">Exploring the medical encyclopedia that remained a standard text in Europe for over 600 years.</p>
+                    <a href="#" class="inline-block text-sm gold-text hover:underline">Read More →</a>
+                </div>
+                
+                <div class="feature-card course-card p-8 rounded-lg transition-all border border-transparent">
+                    <div class="gold-text mb-4">
+                        <i class="fas fa-star-and-crescent text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 gold-text">Astrolabes and Islamic Astronomy</h3>
+                    <p class="text-gold-100 mb-4">The sophisticated instruments Muslim astronomers developed to map the stars and navigate the seas.</p>
+                    <a href="#" class="inline-block text-sm gold-text hover:underline">Read More →</a>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10">
+                <a href="topics.html" class="inline-block bg-dark-red hover:bg-red-900 text-gold-100 px-8 py-3 rounded-full font-medium transition-all border border-gold">
+                    View All Articles
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="py-16 bg-dark-red">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-8 lg:mb-0 lg:pr-12">
+                    <img src="https://imamandscience.com/wp-content/uploads/2023/03/about-image.jpg" alt="About Imam and Science" class="rounded-lg shadow-lg w-full border border-gold">
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl font-bold gold-text mb-6 serif">About Imam and Science</h2>
+                    <p class="text-gold-100 mb-4">Imam and Science is a knowledge initiative dedicated to exploring and documenting the scientific heritage of Islamic civilization. Our mission is to make this rich intellectual tradition accessible to modern readers.</p>
+                    <p class="text-gold-100 mb-6">We provide well-researched articles, historical analyses, and educational resources that highlight the contributions of Muslim scholars to various fields of knowledge throughout history.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="gold-text mr-4 mt-1">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold gold-text">Historical Research</h4>
+                <p class="text-gold-100">Documenting and analyzing scientific works from Islamic golden age</p>
+            </div>
+        </div>
+        <div class="flex items-start">
+            <div class="gold-text mr-4 mt-1">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div>
+                <h4 class="font-bold gold-text">Educational Resources</h4>
+                <p class="text-gold-100">Comprehensive articles for readers of all levels</p>
+            </div>
+        </div>
+        <div class="flex items-start">
+            <div class="gold-text mr-4 mt-1">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div>
+                <h4 class="font-bold gold-text">Cultural Preservation</h4>
+                <p class="text-gold-100">Safeguarding the intellectual heritage of Islamic civilization</p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Topics Section -->
+<section class="py-16 bg-deep-black">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold gold-text mb-4 serif">Explore Our Topics</h2>
+<p class="text-gold-100 max-w-2xl mx-auto">Dive into various fields where Muslim scholars made significant contributions</p>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Mathematics -->
+<div class="course-card rounded-lg shadow-md overflow-hidden transition-all hover:shadow-lg border border-transparent">
+<div class="relative">
+<img src="https://imamandscience.com/wp-content/uploads/2023/03/math.jpg" alt="Islamic Mathematics" class="w-full h-48 object-cover">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2 gold-text">Mathematics</h3>
+<p class="text-gold-100 mb-4">From algebra to trigonometry, discover how Muslim mathematicians shaped modern mathematics.</p>
+<a href="khwarizmi.html" class="inline-block text-sm gold-text hover:underline">Explore Articles →</a>
+</div>
+</div>
+
+<!-- Imam Jafer Al-Sadiq a.s. -->
+<div class="course-card rounded-lg shadow-md overflow-hidden transition-all hover:shadow-lg border border-transparent">
+<div class="relative">
+<img src="https://imamandscience.com/wp-content/uploads/2023/03/astronomy.jpg" alt="Islamic Astronomy" class="w-full h-48 object-cover">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2 gold-text">Teachings of Imam Ja'far al-Sadiq a.s.</h3>
+<p class="text-gold-100 mb-4">The Sixth Imam and His Profound Contributions to Science and Knowledge</p>
+<a href="imamjafer.html" class="inline-block text-sm gold-text hover:underline">Explore Articles →</a>
+</div>
+</div>
+
+<!-- Medicine -->
+<div class="course-card rounded-lg shadow-md overflow-hidden transition-all hover:shadow-lg border border-transparent">
+<div class="relative">
+<img src="https://imamandscience.com/wp-content/uploads/2023/03/medicine.jpg" alt="Islamic Medicine" class="w-full h-48 object-cover">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2 gold-text">Medicine</h3>
+<p class="text-gold-100 mb-4">Learn about the pioneering physicians who laid foundations for modern medical practice.</p>
+<a href="#" class="inline-block text-sm gold-text hover:underline">Explore Articles →</a>
+</div>
+</div>
+
+<!-- Engineering -->
+<div class="course-card rounded-lg shadow-md overflow-hidden transition-all hover:shadow-lg border border-transparent">
+<div class="relative">
+<img src="https://imamandscience.com/wp-content/uploads/2023/03/engineering.jpg" alt="Islamic Engineering" class="w-full h-48 object-cover">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2 gold-text">Engineering</h3>
+<p class="text-gold-100 mb-4">Discover the architectural and mechanical innovations that transformed civilizations.</p>
+<a href="#" class="inline-block text-sm gold-text hover:underline">Explore Articles →</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Notable Scholars Section -->
+<section class="py-16 bg-dark-red">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold gold-text mb-4 serif">Notable Scholars</h2>
+<p class="text-gold-100 max-w-2xl mx-auto">Meet the brilliant minds who advanced human knowledge</p>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Al-Khwarizmi -->
+<div class="testimonial-card p-8 rounded-lg border border-transparent hover:border-gold">
+<div class="flex justify-center mb-4">
+<img src="https://imamandscience.com/wp-content/uploads/2023/03/alkhwarizmi.jpg" alt="Al-Khwarizmi" class="w-24 h-24 rounded-full object-cover border-2 border-gold">
+</div>
+<h3 class="text-xl font-bold text-center gold-text mb-2">Al-Khwarizmi</h3>
+<p class="text-center text-sm gold-text mb-4">Father of Algebra</p>
+<p class="text-gold-100 mb-4 text-center">"The compendious book on calculation by completion and balancing" introduced algebra to the world.</p>
+<div class="text-center">
+<a href="#" class="inline-block text-sm gold-text hover:underline">Learn More →</a>
+</div>
+</div>
+
+<!-- Ibn Sina -->
+<div class="testimonial-card p-8 rounded-lg border border-transparent hover:border-gold">
+<div class="flex justify-center mb-4">
+<img src="https://imamandscience.com/wp-content/uploads/2023/03/ibnsina.jpg" alt="Ibn Sina" class="w-24 h-24 rounded-full object-cover border-2 border-gold">
+</div>
+<h3 class="text-xl font-bold text-center gold-text mb-2">Ibn Sina</h3>
+<p class="text-center text-sm gold-text mb-4">Polymath & Physician</p>
+<p class="text-gold-100 mb-4 text-center">His Canon of Medicine was the standard medical text in Europe for over 600 years.</p>
+<div class="text-center">
+<a href="#" class="inline-block text-sm gold-text hover:underline">Learn More →</a>
+</div>
+</div>
+
+<!-- Al-Zahrawi -->
+<div class="testimonial-card p-8 rounded-lg border border-transparent hover:border-gold">
+<div class="flex justify-center mb-4">
+<img src="https://imamandscience.com/wp-content/uploads/2023/03/alzahrawi.jpg" alt="Al-Zahrawi" class="w-24 h-24 rounded-full object-cover border-2 border-gold">
+</div>
+<h3 class="text-xl font-bold text-center gold-text mb-2">Al-Zahrawi</h3>
+<p class="text-center text-sm gold-text mb-4">Father of Modern Surgery</p>
+<p class="text-gold-100 mb-4 text-center">Pioneered many surgical techniques and invented numerous medical instruments still in use today.</p>
+<div class="text-center">
+<a href="#" class="inline-block text-sm gold-text hover:underline">Learn More →</a>
+</div>
+</div>
+</div>
+
+<div class="text-center mt-10">
+<a href="#" class="inline-block bg-deep-black hover:bg-gray-900 text-gold-100 px-8 py-3 rounded-full font-medium transition-all border border-gold">
+View All Scholars
+</a>
+</div>
+</div>
+</section>
+
+<!-- Resources Section -->
+<section class="py-16 bg-deep-black">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold gold-text mb-4 serif">Additional Resources</h2>
+<p class="text-gold-100 max-w-2xl mx-auto">Expand your knowledge with these recommended materials</p>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Books -->
+<div class="feature-card course-card p-8 rounded-lg transition-all border border-transparent">
+<div class="gold-text mb-4">
+<i class="fas fa-book text-4xl"></i>
+</div>
+<h3 class="text-xl font-bold mb-3 gold-text">Recommended Books</h3>
+<p class="text-gold-100 mb-4">Curated list of essential readings on Islamic scientific heritage, from historical surveys to specialized studies.</p>
+<a href="#" class="inline-block text-sm gold-text hover:underline">View List →</a>
+</div>
+
+<!-- Documentaries -->
+<div class="feature-card course-card p-8 rounded-lg transition-all border border-transparent">
+<div class="gold-text mb-4">
+<i class="fas fa-film text-4xl"></i>
+</div>
+<h3 class="text-xl font-bold mb-3 gold-text">Documentaries</h3>
+<p class="text-gold-100 mb-4">Engaging visual explorations of Islamic scientific achievements, perfect for visual learners.</p>
+<a href="#" class="inline-block text-sm gold-text hover:underline">Watch Now →</a>
+</div>
+
+<!-- Research Papers -->
+<div class="feature-card course-card p-8 rounded-lg transition-all border border-transparent">
+<div class="gold-text mb-4">
+<i class="fas fa-file-alt text-4xl"></i>
+</div>
+<h3 class="text-xl font-bold mb-3 gold-text">Research Papers</h3>
+<p class="text-gold-100 mb-4">Academic papers and articles for those who want to delve deeper into specific topics.</p>
+<a href="#" class="inline-block text-sm gold-text hover:underline">Read Papers →</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Newsletter Section -->
+<section class="py-16 bg-dark-red">
+<div class="container mx-auto px-4 text-center">
+<h2 class="text-3xl font-bold mb-6 serif gold-text">Stay Updated</h2>
+<p class="text-xl mb-8 max-w-2xl mx-auto text-gold-100">Subscribe to our newsletter for the latest articles and research on Islamic scientific heritage.</p>
+<form class="max-w-md mx-auto">
+<div class="flex flex-col sm:flex-row gap-2">
+<input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-full bg-deep-black text-gold-100 border border-gold focus:outline-none focus:ring-2 focus:ring-gold">
+<button type="submit" class="bg-deep-black hover:bg-gray-900 text-gold-100 px-6 py-3 rounded-full font-medium transition-all border border-gold">
+Subscribe
+</button>
+</div>
+</form>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="footer-bg pt-16 pb-8">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+<!-- About Column -->
+<div>
+<img src="https://chatgpt.com/s/m_6832b7dfed9881919cadca003227632c" alt="Imam and Science Logo" class="h-10 mb-4">
+<p class="text-gold-100 mb-4">Exploring the rich scientific heritage of Islamic civilization through well-researched articles and resources.</p>
+<div class="flex space-x-4">
+<a href="#" class="text-gold-100 hover-gold"><i class="fab fa-facebook-f"></i></a>
+<a href="#" class="text-gold-100 hover-gold"><i class="fab fa-twitter"></i></a>
+<a href="#" class="text-gold-100 hover-gold"><i class="fab fa-instagram"></i></a>
+</div>
+</div>
+
+<!-- Quick Links -->
+<div>
+<h3 class="text-lg font-bold mb-4 gold-text">Quick Links</h3>
+<ul class="space-y-2">
+<li><a href="#" class="text-gold-100 hover-gold">Home</a></li>
+<li><a href="#" class="text-gold-100 hover-gold">About</a></li>
+<li><a href="#" class="text-gold-100 hover-gold">Topics</a></li>
+<li><a href="#" class="text-gold-100 hover-gold">Scholars</a></li>
+<li><a href="#" class="text-gold-100 hover-gold">Resources</a></li>
+</ul>
+</div>
+
+<!-- Topics -->
+<div>
+<h3 class="text-lg font-bold mb-4 gold-text">Topics</h3>
+<ul class="space-y-2">
+<li><a href="#" class="text-gold-100 hover-gold">Mathematics</a></li>
+<li><a href="#" class="text-gold-100 hover-gold">Astronomy</a></li>
+<li><a href="#" class="text-gold-100 hover-gold">Medicine</a></li>
+<li><a href="#" class="text-gold-100 hover-gold">Engineering</a></li>
+<li><a href="#" class="text-gold-100 hover-gold">Philosophy</a></li>
+</ul>
+</div>
+
+<!-- Contact -->
+<div>
+<h3 class="text-lg font-bold mb-4 gold-text">Contact</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<i class="fas fa-envelope text-gold-100 mt-1 mr-3"></i>
+<span class="text-gold-100">contact@imamandscience.com</span>
+</li>
+<li class="flex items-start">
+<i class="fas fa-globe text-gold-100 mt-1 mr-3"></i>
+<span class="text-gold-100">www.imamandscience.com</span>
+</li>
+</ul>
+</div>
+</div>
+
+<div class="border-t border-gray-800 pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gold-100 mb-4 md:mb-0">© 2023 Imam and Science. All rights reserved.</p>
+<div class="flex space-x-6">
+<a href="#" class="text-gold-100 hover-gold">Privacy Policy</a>
+<a href="#" class="text-gold-100 hover-gold">Terms of Use</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+
+<script>
+// Theme toggle functionality
+document.addEventListener('DOMContentLoaded', function() {
+const themeToggle = document.getElementById('themeToggle');
+const icon = themeToggle.querySelector('i');
+const textSpan = themeToggle.querySelector('span');
+
+// Check for saved theme preference or use preferred color scheme
+if (localStorage.getItem('theme') === 'light' || 
+(!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+document.body.classList.add('light-mode');
+icon.classList.remove('fa-moon');
+icon.classList.add('fa-sun');
+textSpan.textContent = 'Light Mode';
+}
+
+// Toggle theme on button click
+themeToggle.addEventListener('click', function() {
+document.body.classList.toggle('light-mode');
+
+if (document.body.classList.contains('light-mode')) {
+localStorage.setItem('theme', 'light');
+icon.classList.remove('fa-moon');
+icon.classList.add('fa-sun');
+textSpan.textContent = 'Light Mode';
+} else {
+localStorage.setItem('theme', 'dark');
+icon.classList.remove('fa-sun');
+icon.classList.add('fa-moon');
+textSpan.textContent = 'Dark Mode';
+}
+});
+
+// Mobile menu toggle
+const mobileMenuButton = document.querySelector('.md\\:hidden');
+const mobileMenu = document.querySelector('nav');
+
+mobileMenuButton.addEventListener('click', function() {
+mobileMenu.classList.toggle('hidden');
+mobileMenu.classList.toggle('block');
+mobileMenu.classList.toggle('absolute');
+mobileMenu.classList.toggle('bg-deep-black');
+mobileMenu.classList.toggle('shadow-lg');
+mobileMenu.classList.toggle('w-full');
+mobileMenu.classList.toggle('left-0');
+mobileMenu.classList.toggle('px-4');
+mobileMenu.classList.toggle('py-4');
+mobileMenu.classList.toggle('z-50');
+mobileMenu.classList.toggle('border');
+mobileMenu.classList.toggle('border-gold');
+});
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function (e) {
+e.preventDefault();
+
+document.querySelector(this.getAttribute('href')).scrollIntoView({
+behavior: 'smooth'
+});
+});
+});
+});
+</script>
+</body>
+</html>j

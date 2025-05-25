@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imam Ja'far al-Sadiq - Teachings & Scientific Contributions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: #0a0a0a;
+            color: #e5e5e5;
+            transition: all 0.3s ease;
+        }
+        
+        body.light-mode {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .light-mode .bg-deep-black {
+            background-color: #f5f5f5;
+        }
+        
+        .light-mode .bg-dark-red {
+            background-color: #f8f1e5;
+        }
+        
+        .light-mode .text-gold-100,
+        .light-mode .gold-text {
+            color: #8b4513;
+        }
+        
+        .light-mode .red-text {
+            color: #8b0000;
+        }
+        
+        .light-mode .article-card,
+        .light-mode .teaching-card,
+        .light-mode .quote-card {
+            background-color: #ffffff;
+            border-color: #ddd;
+            color: #333;
+        }
+        
+        .light-mode .footer-bg {
+            background-color: #e5e5e5;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://i.pinimg.com/736x/f1/b8/c1/f1b8c1c2d9321da888be9d75e49f4a59.jpg');
+            background-size: cover;
+            background-position: center;
+            border-bottom: 1px solid #b8860b;
+        }
+        
+        .light-mode .hero-section {
+            background: linear-gradient(rgba(245, 245, 245, 0.8), rgba(245, 245, 245, 0.8)), url('https://i.pinimg.com/736x/f1/b8/c1/f1b8c1c2d9321da888be9d75e49f4a59.jpg');
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        
+        .article-card:hover,
+        .teaching-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(184, 134, 11, 0.2);
+            border-color: #b8860b;
+        }
+        
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+        
+        .serif {
+            font-family: 'Cinzel', serif;
+        }
+        
+        .gold-text {
+            color: #b8860b;
+        }
+        
+        .red-text {
+            color: #8b0000;
+        }
+        
+        .bg-deep-black {
+            background-color: #0a0a0a;
+        }
+        
+        .bg-dark-red {
+            background-color: #450a0a;
+        }
+        
+        .border-gold {
+            border-color: #b8860b;
+        }
+        
+        .hover-gold:hover {
+            color: #b8860b;
+        }
+        
+        .hover-red:hover {
+            color: #8b0000;
+        }
+        
+        .article-card,
+        .teaching-card {
+            background-color: #171717;
+            border: 1px solid #262626;
+        }
+        
+        .quote-card {
+            background-color: #171717;
+            border: 1px solid #262626;
+            border-left: 4px solid #b8860b;
+        }
+        
+        .footer-bg {
+            background-color: #050505;
+            border-top: 1px solid #b8860b;
+        }
+        
+        .theme-toggle {
+            background-color: #450a0a;
+            color: #b8860b;
+            border: 1px solid #b8860b;
+        }
+        
+        .light-mode .theme-toggle {
+            background-color: #8b4513;
+            color: #f8f1e5;
+            border: 1px solid #8b4513;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background-color: #b8860b;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: -0.5rem;
+            top: 0;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            background-color: #b8860b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0a0a0a;
+            font-size: 0.75rem;
+        }
+    </style>
+</head>
+<body class="bg-deep-black">
+    <!-- Top Bar -->
+    <header class="bg-deep-black shadow-sm border-b border-gold">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold gold-text serif">Imam & Science</a>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-gold-100 hover-gold font-medium">Home</a>
+                <a href="#" class="text-gold-100 hover-gold font-medium">About</a>
+                <div class="dropdown relative">
+                    <button class="text-gold-100 hover-gold font-medium flex items-center">
+                        Imams <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div class="dropdown-menu absolute hidden bg-deep-black shadow-lg rounded mt-2 py-2 w-48 border border-gold">
+                        <a href="#" class="block px-4 py-2 hover:bg-dark-red">Ali ibn Abi Talib</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-dark-red">Husayn ibn Ali</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-dark-red">Zayn al-Abidin</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-dark-red">Muhammad al-Baqir</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-dark-red">Ja'far al-Sadiq</a>
+                    </div>
+                </div>
+                <a href="#" class="text-gold-100 hover-gold font-medium">Topics</a>
+                <a href="#" class="text-gold-100 hover-gold font-medium">Resources</a>
+                <a href="#" class="text-gold-100 hover-gold font-medium">Contact</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <button class="md:hidden text-gold-100">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+                <button id="themeToggle" class="theme-toggle px-4 py-2 rounded-full font-medium transition-all">
+                    <i class="fas fa-moon"></i> <span class="hidden md:inline">Dark Mode</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-gold-100 py-24">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 serif gold-text">Imam Ja'far al-Sadiq</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">The Sixth Imam and His Profound Contributions to Science and Knowledge</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#teachings" class="bg-dark-red hover:bg-red-900 text-gold-100 px-8 py-3 rounded-full font-medium transition-all border border-gold">
+                    Explore Teachings
+                </a>
+                <a href="#articles" class="bg-transparent hover:bg-dark-red text-gold-100 px-8 py-3 rounded-full font-medium transition-all border border-gold">
+                    Read Articles
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="py-16 bg-dark-red">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/3">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Jafar_Sadiq_%28cropped%29.jpg/800px-Jafar_Sadiq_%28cropped%29.jpg" 
+                         alt="Imam Ja'far al-Sadiq" 
+                         class="rounded-lg shadow-lg w-full border-2 border-gold">
+                </div>
+                <div class="lg:w-2/3">
+                    <h2 class="text-3xl font-bold gold-text mb-6 serif">Imam Ja'far al-Sadiq (AS)</h2>
+                    <p class="text-gold-100 mb-6 text-lg">
+                        Imam Ja'far ibn Muhammad al-Sadiq (702-765 CE), the sixth Imam of the Ahl al-Bayt, was a towering intellectual figure whose teachings formed the foundation of Shi'a jurisprudence and theology. 
+                        Beyond his religious leadership, Imam al-Sadiq was a polymath who made significant contributions to various sciences including chemistry, astronomy, mathematics, and medicine.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="flex items-start">
+                            <div class="gold-text mr-4 mt-1">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold gold-text">Born</h4>
+                                <p class="text-gold-100">17th Rabi' al-Awwal 83 AH (702 CE)</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="gold-text mr-4 mt-1">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold gold-text">Place of Birth</h4>
+                                <p class="text-gold-100">Medina, Arabia</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="gold-text mr-4 mt-1">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold gold-text">Title</h4>
+                                <p class="text-gold-100">Al-Sadiq (The Truthful)</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="gold-text mr-4 mt-1">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold gold-text">Notable Students</h4>
+                                <p class="text-gold-100">Jabir ibn Hayyan, Abu Hanifa, Malik ibn Anas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="py-16 bg-deep-black">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold gold-text mb-4 serif">Life and Legacy</h2>
+                <p class="text-gold-100 max-w-2xl mx-auto">Key events in the life of Imam Ja'far al-Sadiq</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="timeline-item">
+                    <div class="timeline-dot">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <h3 class="text-xl font-bold gold-text mb-2">Birth</h3>
+                    <p class="text-gold-100">Born in Medina in 702 CE to Imam Muhammad al-Baqir and Umm Farwah. Named Ja'far ("river") and given the title al-Sadiq ("the truthful") for his impeccable character.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-xl font-bold gold-text mb-2">Early Education</h3>
+                    <p class="text-gold-100">Received education from his father Imam al-Baqir and grandfather Imam Zayn al-Abidin in religious sciences, philosophy, and natural sciences.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot">
+                        <i class="fas fa-mosque"></i>
+                    </div>
+                    <h3 class="text-xl font-bold gold-text mb-2">Imamate</h3>
+                    <p class="text-gold-100">Became the sixth Imam after his father's martyrdom in 733 CE. Established the famous teaching circle in Medina that attracted thousands of students.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3 class="text-xl font-bold gold-text mb-2">Scientific Contributions</h3>
+                    <p class="text-gold-100">Between 750-760 CE, Imam al-Sadiq made his most significant scientific contributions through his student Jabir ibn Hayyan, laying foundations for modern chemistry.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3 class="text-xl font-bold gold-text mb-2">Hadith Collection</h3>
+                    <p class="text-gold-100">Compiled extensive collections of hadith and teachings that form the basis of Shi'a jurisprudence. His legal opinions influenced all major Islamic schools of thought.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="text-xl font-bold gold-text mb-2">Martyrdom</h3>
+                    <p class="text-gold-100">Poisoned by order of the Abbasid caliph al-Mansur in 765 CE. Buried in Jannat al-Baqi cemetery in Medina, where his shrine was a place of pilgrimage until its destruction in 1925.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teachings Section -->
+    <section id="teachings" class="py-16 bg-dark-red">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold gold-text mb-4 serif">Key Teachings</h2>
+                <p class="text-gold-100 max-w-2xl mx-auto">Wisdom and guidance from Imam al-Sadiq</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="teaching-card p-8 rounded-lg transition-all">
+                    <div class="gold-text mb-4">
+                        <i class="fas fa-brain text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 gold-text">On Knowledge and Wisdom</h3>
+                    <p class="text-gold-100 mb-4">"Knowledge is a shield, truthfulness is might, ignorance is weakness, and understanding is glory."</p>
+                    <p class="text-gold-100 mb-4">"The scholar who derives benefit from his knowledge is better than a thousand worshippers."</p>
+                    <a href="#" class="inline-block text-sm gold-text hover:underline">More Quotes →</a>
+                </div>
+                
+                <div class="teaching-card p-8 rounded-lg transition-all">
+                    <div class="gold-text mb-4">
+                        <i class="fas fa-atom text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 gold-text">On Science and Nature</h3>
+                    <p class="text-gold-100 mb-4">"Study the sciences, for the study of the sciences is atonement for past sins."</p>
+                    <p class="text-gold-100 mb-4">"The world is one body; when one part suffers, the whole body feels the pain."</p>
+                    <a href="#" class="inline-block text-sm gold-text hover:underline">More Quotes →</a>
+                </div>
+                
+                <div class="teaching-card p-8 rounded-lg transition-all">
+                    <div class="gold-text mb-4">
+                        <i class="fas fa-heartbeat text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 gold-text">On Ethics and Character</h3>
+                    <p class="text-gold-100 mb-4">"Three things increase love: faithfulness, kindness, and humility."</p>
+                    <p class="text-gold-100 mb-4">"The most perfect of believers in faith is the best of them in character."</p>
+                    <a href="#" class="inline-block text-sm gold-text hover:underline">More Quotes →</a>
+                </div>
+                
+                <div class="teaching-card p-8 rounded-lg transition-all">
+                    <div class="gold-text mb-4">
+                        <i class="fas fa-balance-scale text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 gold-text">On Justice and Society</h3>
+                    <p class="text-gold-100 mb-4">"Justice is sweeter than honey, softer than butter, and more fragrant than musk."</p>
+                    <p class="text-gold-100 mb-4">"The rights of people upon you are that you should wish for them what you wish for yourself."</p>
+                    <a href="#" class="inline-block text-sm gold-text hover:underline">More Quotes →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scientific Contributions Section -->
+    <section class="py-16 bg-deep-black">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold gold-text mb-4 serif">Scientific Contributions</h2>
+                <p class="text-gold-100 max-w-2xl mx-auto">Imam al-Sadiq's impact on various scientific disciplines</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Chemistry -->
+                <div class="article-card rounded-lg shadow-md overflow-hidden transition-all">
+                    <div class="relative">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Jabir_ibn_Hayyan_%28Geber%29.jpg/800px-Jabir_ibn_Hayyan_%28Geber%29.jpg" 
+                             alt="Jabir ibn Hayyan" 
+                             class="w-full h-48 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 gold-text">Chemistry</h3>
+                        <p class="text-gold-100 mb-4">Through his student Jabir ibn Hayyan, Imam al-Sadiq contributed to early chemical theories and experimental methods that laid foundations for modern chemistry.</p>
+                        <a href="chemistryimam.html" class="inline-block text-sm gold-text hover:underline">Read More →</a>
+                    </div>
+                </div>
+                
+                <!-- Astronomy -->
+                <div class="article-card rounded-lg shadow-md overflow-hidden transition-all">
+                    <div class="relative">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Astrolabe-Persian-18C.jpg/800px-Astrolabe-Persian-18C.jpg" 
+                             alt="Islamic Astronomy" 
+                             class="w-full h-48 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 gold-text">Astronomy</h3>
+                        <p class="text-gold-100 mb-4">Imam al-Sadiq's teachings on celestial movements influenced later Islamic astronomers. He emphasized empirical observation of heavenly bodies.</p>
+                        <a href="#" class="inline-block text-sm gold-text hover:underline">Read More →</a>
+                    </div>
+                </div>
+                
+                <!-- Medicine -->
+                <div class="article-card rounded-lg shadow-md overflow-hidden transition-all">
+                    <div class="relative">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Islamic_Medicine_Manuscript.jpg/800px-Islamic_Medicine_Manuscript.jpg" 
+                             alt="Islamic Medicine" 
+                             class="w-full h-48 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 gold-text">Medicine</h3>
+                        <p class="text-gold-100 mb-4">Imam al-Sadiq's medical teachings emphasized holistic approaches, herbal remedies, and the importance of diet in maintaining health.</p>
+                        <a href="#" class="inline-block text-sm gold-text hover:underline">Read More →</a>
+                    </div>
+                </div>
+                
+                <!-- Mathematics -->
+                <div class="article-card rounded-lg shadow-md overflow-hidden transition-all">
+                    <div class="relative">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Islamic_Mathematics_Manuscript.jpg/800px-Islamic_Mathematics_Manuscript.jpg" 
+                             alt="Islamic Mathematics" 
+                             class="w-full h-48 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 gold-text">Mathematics</h3>
+                        <p class="text-gold-100 mb-4">Imam al-Sadiq contributed to mathematical concepts through his students, particularly in geometry and number theory applications.</p>
+                        <a href="#" class="inline-block text-sm gold-text hover:underline">Read More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles Section -->
+    <section id="articles" class="py-16 bg-dark-red">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold gold-text mb-4 serif">Featured Articles</h2>
+                <p class="text-gold-100 max-w-2xl mx-auto">In-depth explorations of Imam al-Sadiq's legacy</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Article 1 -->
+                <div class="article-card rounded-lg overflow-hidden transition-all">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Alchemy_MS_Getty_Museum.jpg/800px-Alchemy_MS_Getty_Museum.jpg" 
+                         alt="Alchemy Manuscript" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-sm gold-text">Chemistry</span>
+                            <span class="text-sm text-gold-100">15 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 gold-text">Jabir ibn Hayyan and the Alchemical Legacy of Imam al-Sadiq</h3>
+                        <p class="text-gold-100 mb-4">Exploring how Imam al-Sadiq's teachings influenced Jabir's development of experimental chemistry and laboratory techniques that predated modern scientific methods.</p>
+                        <a href="#" class="inline-block text-sm gold-text hover:underline">Read Article →</a>
+                    </div>
+                </div>
+                
+                <!-- Article 2 -->
+                <div class="article-card rounded-lg overflow-hidden transition-all">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Islamic_Law_Manuscript.jpg/800px-Islamic_Law_Manuscript.jpg" 
+                         alt="Islamic Law Manuscript" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-sm gold-text">Jurisprudence</span>
+                            <span class="text-sm text-gold-100">20 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 gold-text">The Foundations of Shi'a Jurisprudence in Imam al-Sadiq's Teachings</h3>
+                        <p class="text-gold-100 mb-4">An analysis of how Imam al-Sadiq's legal opinions and methodology established the principles that would become the basis of Twelver Shi'a fiqh.</p>
+                        <a href="#" class="inline-block text-sm gold-text hover:underline">Read Article →</a>
+                    </div>
+                </div>
+                
+                <!-- Article 3 -->
+                <div class="article-card rounded-lg overflow-hidden transition-all">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Islamic_Philosophy_Manuscript.jpg/800px-Islamic_Philosophy_Manuscript.jpg" 
+                         alt="Philosophy Manuscript" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-sm gold-text">Philosophy</span>
+                            <span class="text-sm text-gold-100">25 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 gold-text">The Philosophical School of Imam Ja'far al-Sadiq</h3>
+                        <p class="text-gold-100 mb-4">Examining Imam al-Sadiq's contributions to Islamic philosophy, particularly his synthesis of rational thought with revealed knowledge.</p>
+                        <a href="#" class="inline-block text-sm gold-text hover:underline">Read Article →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10">
+                <a href="#" class="inline-block bg-deep-black hover:bg-gray-900 text-gold-100 px-8 py-3 rounded-full font-medium transition-all border border-gold">
+                    View All Articles
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quotes Section -->
+    <section class="py-16 bg-deep-black">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold gold-text mb-4 serif">Wisdom Quotes</h2>
+                <p class="text-gold-100 max-w-2xl mx-auto">Selected sayings of Imam Ja'far al-Sadiq</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="quote-card p-6 rounded-lg transition-all">
+                    <p class="text-gold-100 italic mb-4">"The perfection of intellect is in three things: Humbleness for God, certain faith, and silence except for good."</p>
+                    <p class="text-right gold-text font-medium">— Imam Ja'far al-Sadiq</p>
+                </div>
+                
+                <div class="quote-card p-6 rounded-lg transition-all">
+                    <p class="text-gold-100 italic mb-4">"Knowledge is not by learning much, but is a light which God casts into the heart of whomever He wills to guide."</p>
+                    <p class="text-right gold-text font-medium">— Imam Ja'far al-Sadiq</p>
+                </div>
+                
+                <div class="quote-card p-6 rounded-lg transition-all">
+                    <p class="text-gold-100 italic mb-4">"The most worshipful worship is the reflection about God and His power."</p>
+                    <p class="text-right gold-text font-medium">— Imam Ja'far al-Sadiq</p>
+                </div>
+                
+                <div class="quote-card p-6 rounded-lg transition-all">
+                    <p class="text-gold-100 italic mb-4">"Whoever is pleased with little provision, God makes others pleased with his little good deeds."</p>
+                    <p class="text-right gold-text font-medium">— Imam Ja'far al-Sadiq</p>
+                </div>
+                
+                <div class="quote-card p-6 rounded-lg transition-all">
+                    <p class="text-gold-100 italic mb-4">"The believer needs three qualities: success from God, an admonisher from himself, and acceptance of advice from those who advise him."</p>
+                    <p class="text-right gold-text font-medium">— Imam Ja'far al-Sadiq</p>
+                </div>
+                
+                <div class="quote-card p-6 rounded-lg transition-all">
+                    <p class="text-gold-100 italic mb-4">"The perfection of religion is in three things: endurance in hardship, measuring with justice, and preparing for the Day of Resurrection."</p>
+                    <p class="text-right gold-text font-medium">— Imam Ja'far al-Sadiq</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-bg pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- About Column -->
+                <div>
+                    <img src="https://chatgpt.com/s/m_6832b7dfed9881919cadca003227632c" alt="Imam and Science Logo" class="h-10 mb-4">
+                    <p class="text-gold-100 mb-4">Exploring the rich scientific heritage of Islamic civilization through well-researched articles and resources.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gold-100 hover-gold"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gold-100 hover-gold"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gold-100 hover-gold"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4 gold-text">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gold-100 hover-gold">Home</a></li>
+                        <li><a href="#" class="text-gold-100 hover-gold">About</a></li>
+                        <li><a href="#" class="text-gold-100 hover-gold">Imams</a></li>
+                        <li><a href="#" class="text-gold-100 hover-gold">Topics</a></li>
+                        <li><a href="#" class="text-gold-100 hover-gold">Resources</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Imams -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4 gold-text">Imams</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gold-100 hover-gold">Ali ibn Abi Talib</a></li>
+                        <li><a href="#" class="text-gold-100 hover-gold">Husayn ibn Ali</a></li>
+                        <li><a href="#" class="text-gold-100 hover-gold">Zayn al-Abidin</a></li>
+                        <li><a href="#" class="text-gold-100 hover-gold">Muhammad al-Baqir</a></li>
+                        <li><a href="#" class="text-gold-100 hover-gold">Ja'far al-Sadiq</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4 gold-text">Contact</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope text-gold-100 mt-1 mr-3"></i>
+                            <span class="text-gold-100">contact@imamandscience.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-globe text-gold-100 mt-1 mr-3"></i>
+                            <span class="text-gold-100">www.imamandscience.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gold-100 mb-4 md:mb-0">© 2023 Imam and Science. All rights reserved.</p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gold-100 hover-gold">Privacy Policy</a>
+                        <a href="#" class="text-gold-100 hover-gold">Terms of Use</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggle = document.getElementById('themeToggle');
+            const icon = themeToggle.querySelector('i');
+            const textSpan = themeToggle.querySelector('span');
+            
+            // Check for saved theme preference or use preferred color scheme
+            if (localStorage.getItem('theme') === 'light' || 
+                (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+                document.body.classList.add('light-mode');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                textSpan.textContent = 'Light Mode';
+            }
+            
+            // Toggle theme on button click
+            themeToggle.addEventListener('click', function() {
+                document.body.classList.toggle('light-mode');
+                
+                if (document.body.classList.contains('light-mode')) {
+                    localStorage.setItem('theme', 'light');
+                    icon.classList.remove('fa-moon');
+                    icon.classList.add('fa-sun');
+                    textSpan.textContent = 'Light Mode';
+                } else {
+                    localStorage.setItem('theme', 'dark');
+                    icon.classList.remove('fa-sun');
+                    icon.classList.add('fa-moon');
+                    textSpan.textContent = 'Dark Mode';
+                }
+            });
+            
+            // Mobile menu toggle
+            const mobileMenuButton = document.querySelector('.md\\:hidden');
+            const mobileMenu = document.querySelector('nav');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('block');
+                mobileMenu.classList.toggle('absolute');
+                mobileMenu.classList.toggle('bg-deep-black');
+                mobileMenu.classList.toggle('shadow-lg');
+                mobileMenu.classList.toggle('w-full');
+                mobileMenu.classList.toggle('left-0');
+                mobileMenu.classList.toggle('px-4');
+                mobileMenu.classList.toggle('py-4');
+                mobileMenu.classList.toggle('z-50');
+                mobileMenu.classList.toggle('border');
+                mobileMenu.classList.toggle('border-gold');
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

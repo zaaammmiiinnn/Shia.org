@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imam Ja'far al-Sadiq (AS) - Chemistry Contributions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: #0a0a0a;
+            color: #e5e5e5;
+            transition: all 0.3s ease;
+        }
+        
+        body.light-mode {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .light-mode .bg-deep-black {
+            background-color: #f5f5f5;
+        }
+        
+        .light-mode .bg-dark-red {
+            background-color: #f8f1e5;
+        }
+        
+        .light-mode .text-gold-100,
+        .light-mode .gold-text {
+            color: #8b4513;
+        }
+        
+        .light-mode .red-text {
+            color: #8b0000;
+        }
+        
+        .light-mode .article-card,
+        .light-mode .teaching-card,
+        .light-mode .quote-card {
+            background-color: #ffffff;
+            border-color: #ddd;
+            color: #333;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Alchemy_MS_Getty_Museum.jpg/1200px-Alchemy_MS_Getty_Museum.jpg');
+            background-size: cover;
+            background-position: center;
+            border-bottom: 1px solid #b8860b;
+        }
+        
+        .light-mode .hero-section {
+            background: linear-gradient(rgba(245, 245, 245, 0.8), rgba(245, 245, 245, 0.8)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Alchemy_MS_Getty_Museum.jpg/1200px-Alchemy_MS_Getty_Museum.jpg');
+        }
+        
+        .serif {
+            font-family: 'Cinzel', serif;
+        }
+        
+        .gold-text {
+            color: #b8860b;
+        }
+        
+        .red-text {
+            color: #8b0000;
+        }
+        
+        .bg-deep-black {
+            background-color: #0a0a0a;
+        }
+        
+        .bg-dark-red {
+            background-color: #450a0a;
+        }
+        
+        .border-gold {
+            border-color: #b8860b;
+        }
+        
+        .hover-gold:hover {
+            color: #b8860b;
+        }
+        
+        .article-card {
+            background-color: #171717;
+            border: 1px solid #262626;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(184, 134, 11, 0.2);
+            border-color: #b8860b;
+        }
+        
+        .teaching-card {
+            background-color: #171717;
+            border-left: 4px solid #b8860b;
+        }
+        
+        .quote-card {
+            background-color: #171717;
+            border-left: 4px solid #b8860b;
+        }
+        
+        .footer-bg {
+            background-color: #050505;
+            border-top: 1px solid #b8860b;
+        }
+        
+        .theme-toggle {
+            background-color: #450a0a;
+            color: #b8860b;
+            border: 1px solid #b8860b;
+        }
+        
+        .light-mode .theme-toggle {
+            background-color: #8b4513;
+            color: #f8f1e5;
+            border: 1px solid #8b4513;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background-color: #b8860b;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: -0.5rem;
+            top: 0;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            background-color: #b8860b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0a0a0a;
+            font-size: 0.75rem;
+        }
+        
+        .chemical-process {
+            border-left: 4px solid #b8860b;
+            background-color: #171717;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .chemical-principle {
+            background-color: #171717;
+            border: 1px solid #b8860b;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-deep-black">
+    <!-- Top Bar -->
+   <!-- Header with Enhanced Dropdown -->
+<header class="bg-deep-black shadow-sm border-b border-gold">
+  <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center">
+          <img src="https://chatgpt.com/s/m_6832b7dfed9881919cadca003227632c" alt="Imam and Science Logo" class="h-12">
+      </div>
+      
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex space-x-8">
+          <a href="index.html" class="text-gold-100 hover-gold font-medium">Home</a>
+          <a href="#" class="text-gold-100 hover-gold font-medium">About</a>
+          
+          <!-- Imams Dropdown -->
+          <div class="dropdown relative group">
+              <button class="text-gold-100 hover-gold font-medium flex items-center">
+                  The Imams <i class="fas fa-chevron-down ml-1 text-xs transition-transform duration-300 group-hover:rotate-180"></i>
+              </button>
+              <div class="dropdown-menu absolute hidden group-hover:block bg-deep-black shadow-lg rounded mt-2 py-2 w-48 border border-gold z-50 max-h-96 overflow-y-auto">
+                  <!-- Complete list of 12 Imams -->
+                  <a href="imamali.html" class="block px-4 py-2 hover:bg-dark-red text-gold-100 transition-colors duration-200">Ali ibn Abi Talib</a>
+                  <a href="#" class="block px-4 py-2 hover:bg-dark-red text-gold-100 transition-colors duration-200">Husayn ibn Ali</a>
+                  <a href="#" class="block px-4 py-2 hover:bg-dark-red text-gold-100 transition-colors duration-200">Zayn al-Abidin</a>
+                  <a href="#" class="block px-4 py-2 hover:bg-dark-red text-gold-100 transition-colors duration-200">Muhammad al-Baqir</a>
+                  <a href="#" class="block px-4 py-2 hover:bg-dark-red text-gold-100 transition-colors duration-200">Ja'far al-Sadiq</a>
+                  <a href="#" class="block px-4 py-2 hover:bg-dark-red text-gold-100 transition-colors duration-200">Musa al-Kadhim</a>
+                  <a href="#" class="block px-4 py-2 hover:bg-dark-red text-gold-100 transition-colors duration-200">Ali al-Ridha</a>
+                  <a href="#" class="block px-4 py-2 hover:bg-dark-red text-gold-100 transition-colors duration-200">Muhammad al-Jawad</a>
+                  <a href="#" class="block px-4 py-2 hover:bg-dark-red text-gold-100 transition-colors duration-200">Ali al-Hadi</a>
+                  <a href="#" class="block px-4 py-2 hover:bg-dark-red text-gold-100 transition-colors duration-200">Hasan al-Askari</a>
+                  <a href="#" class="block px-4 py-2 hover:bg-dark-red text-gold-100 transition-colors duration-200">Muhammad al-Mahdi</a>
+              </div>
+          </div>
+          
+          
+          <a href="#" class="text-gold-100 hover-gold font-medium">Resources</a>
+          <a href="#" class="text-gold-100 hover-gold font-medium">Contact</a>
+      </nav>
+      
+      <!-- Mobile Menu Button -->
+      <div class="flex items-center space-x-4">
+          <button id="mobileMenuButton" class="md:hidden text-gold-100">
+              <i class="fas fa-bars text-xl"></i>
+          </button>
+          <button id="themeToggle" class="theme-toggle px-4 py-2 rounded-full font-medium transition-all">
+              <i class="fas fa-moon"></i> <span class="hidden md:inline">Dark Mode</span>
+          </button>
+      </div>
+  </div>
+
+  <!-- Mobile Menu (Hidden by default) -->
+  <div id="mobileMenu" class="hidden md:hidden absolute top-full left-0 right-0 bg-deep-black z-50 border-t border-gold shadow-lg">
+      <div class="container mx-auto px-4 py-3">
+          <a href="index.html" class="block py-3 text-gold-100 hover-gold border-b border-gold-800">Home</a>
+          <a href="#" class="block py-3 text-gold-100 hover-gold border-b border-gold-800">About</a>
+          
+          <!-- Mobile Dropdown Trigger -->
+          <div class="relative">
+              <button id="mobileDropdownButton" class="w-full flex justify-between items-center py-3 text-gold-100 hover-gold border-b border-gold-800">
+                  The Imams <i class="fas fa-chevron-down text-xs ml-2 transition-transform duration-300"></i>
+              </button>
+              <!-- Mobile Dropdown Content -->
+              <div id="mobileDropdown" class="hidden pl-4">
+                  <a href="#" class="block py-2 text-gold-100 hover-gold">Ali ibn Abi Talib</a>
+                  <a href="#" class="block py-2 text-gold-100 hover-gold">Husayn ibn Ali</a>
+                  <a href="#" class="block py-2 text-gold-100 hover-gold">Zayn al-Abidin</a>
+                  <a href="#" class="block py-2 text-gold-100 hover-gold">Muhammad al-Baqir</a>
+                  <a href="#" class="block py-2 text-gold-100 hover-gold">Ja'far al-Sadiq</a>
+                  <a href="#" class="block py-2 text-gold-100 hover-gold">Musa al-Kadhim</a>
+                  <a href="#" class="block py-2 text-gold-100 hover-gold">Ali al-Ridha</a>
+                  <a href="#" class="block py-2 text-gold-100 hover-gold">Muhammad al-Jawad</a>
+                  <a href="#" class="block py-2 text-gold-100 hover-gold">Ali al-Hadi</a>
+                  <a href="#" class="block py-2 text-gold-100 hover-gold">Hasan al-Askari</a>
+                  <a href="#" class="block py-2 text-gold-100 hover-gold">Muhammad al-Mahdi</a>
+              </div>
+          </div>
+          
+          <a href="#" class="block py-3 text-gold-100 hover-gold border-b border-gold-800">Teachings</a>
+          <a href="#" class="block py-3 text-gold-100 hover-gold border-b border-gold-800">Resources</a>
+          <a href="#" class="block py-3 text-gold-100 hover-gold">Contact</a>
+      </div>
+  </div>
+</header>
+
+<style>
+  /* Enhanced Dropdown Animations */
+  .dropdown-menu {
+      transition: opacity 0.15s ease-out, transform 0.15s ease-out;
+      opacity: 0;
+      transform: translateY(-5px);
+      pointer-events: none;
+  }
+  
+  .group:hover .dropdown-menu {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+      transition: opacity 0.2s ease-in, transform 0.2s ease-in;
+  }
+  
+  /* Mobile Dropdown Animation */
+  #mobileDropdown {
+      transition: max-height 0.3s ease-in-out, opacity 0.2s ease-in-out;
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+  }
+  
+  #mobileDropdown.show {
+      max-height: 500px; /* Adjust based on content */
+      opacity: 1;
+  }
+  
+  /* Mobile Menu Animation */
+  #mobileMenu {
+      transition: transform 0.25s ease-out, opacity 0.2s ease-out;
+      transform: translateY(-10px);
+      opacity: 0;
+  }
+  
+  #mobileMenu.show {
+      transform: translateY(0);
+      opacity: 1;
+  }
+  
+  /* Chevron Rotation */
+  #mobileDropdownButton.rotate i {
+      transform: rotate(180deg);
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      // Mobile Menu Toggle
+      const mobileMenuButton = document.getElementById('mobileMenuButton');
+      const mobileMenu = document.getElementById('mobileMenu');
+      
+      mobileMenuButton.addEventListener('click', function() {
+          mobileMenu.classList.toggle('hidden');
+          mobileMenu.classList.toggle('show');
+      });
+      
+      // Mobile Dropdown Toggle
+      const mobileDropdownButton = document.getElementById('mobileDropdownButton');
+      const mobileDropdown = document.getElementById('mobileDropdown');
+      
+      mobileDropdownButton.addEventListener('click', function() {
+          mobileDropdown.classList.toggle('hidden');
+          mobileDropdown.classList.toggle('show');
+          this.classList.toggle('rotate');
+      });
+      
+      // Close menus when clicking outside
+      document.addEventListener('click', function(e) {
+          // Close mobile menu
+          if (!e.target.closest('#mobileMenu') && !e.target.closest('#mobileMenuButton')) {
+              mobileMenu.classList.add('hidden');
+              mobileMenu.classList.remove('show');
+          }
+          
+          // Close mobile dropdown
+          if (!e.target.closest('#mobileDropdown') && !e.target.closest('#mobileDropdownButton')) {
+              mobileDropdown.classList.add('hidden');
+              mobileDropdown.classList.remove('show');
+              mobileDropdownButton.classList.remove('rotate');
+          }
+      });
+  });
+</script>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-gold-100 py-24">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 serif gold-text">Imam Ja'far al-Sadiq (AS)</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">The Father of Islamic Chemistry and His Scientific Legacy</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#teachings" class="bg-dark-red hover:bg-red-900 text-gold-100 px-8 py-3 rounded-full font-medium transition-all border border-gold">
+                    Chemical Teachings
+                </a>
+                <a href="#principles" class="bg-transparent hover:bg-dark-red text-gold-100 px-8 py-3 rounded-full font-medium transition-all border border-gold">
+                    Scientific Principles
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="py-16 bg-dark-red">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/3">
+                    <img src="https://www.dropbox.com/s/8pk9pung8s83gjv/06.png?dl=1" 
+                         alt="Imam Ja'far al-Sadiq" 
+                         class="rounded-lg shadow-lg w-full border-2 border-gold">
+                </div>
+                <div class="lg:w-2/3">
+                    <h2 class="text-3xl font-bold gold-text mb-6 serif">Imam al-Sadiq's Chemical Legacy</h2>
+                    <p class="text-gold-100 mb-6 text-lg">
+                        Imam Ja'far ibn Muhammad al-Sadiq (702-765 CE), the sixth Imam of the Ahl al-Bayt, was not only a religious leader but also a pioneering scientist whose teachings laid the foundation for Islamic chemistry (alchemy). Through his most famous student, Jabir ibn Hayyan (Geber), Imam al-Sadiq's chemical knowledge influenced the development of modern chemistry.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="flex items-start">
+                            <div class="gold-text mr-4 mt-1">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold gold-text">Experimental Method</h4>
+                                <p class="text-gold-100">Pioneered systematic experimentation and laboratory techniques</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="gold-text mr-4 mt-1">
+                                <i class="fas fa-atom"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold gold-text">Material Science</h4>
+                                <p class="text-gold-100">Advanced understanding of metals, acids, and compounds</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="gold-text mr-4 mt-1">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold gold-text">Knowledge Transmission</h4>
+                                <p class="text-gold-100">Taught Jabir ibn Hayyan who documented the chemical knowledge</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="gold-text mr-4 mt-1">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold gold-text">Quantitative Approach</h4>
+                                <p class="text-gold-100">Emphasized precise measurement and observation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chemical Teachings Section -->
+    <section id="teachings" class="py-16 bg-deep-black">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold gold-text mb-4 serif">Chemical Teachings of Imam al-Sadiq</h2>
+                <p class="text-gold-100 max-w-2xl mx-auto">Documented by Jabir ibn Hayyan in his alchemical works</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <!-- Teaching 1 -->
+                <div class="teaching-card p-8 rounded-lg mb-8 transition-all">
+                    <div class="flex items-center mb-4">
+                        <div class="gold-text mr-4">
+                            <i class="fas fa-flask text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold gold-text">The Nature of Metals</h3>
+                    </div>
+                    <p class="text-gold-100 mb-4">
+                        Imam al-Sadiq taught that metals are composed of different combinations of fundamental principles (sulfur and mercury in varying purities). This theory, later developed by Jabir, became the basis of metallic theory for centuries.
+                    </p>
+                    <div class="chemical-principle">
+                        <h4 class="font-bold gold-text mb-2">Key Teaching:</h4>
+                        <p class="text-gold-100 italic">"All metals share a common origin but differ in their balance of constituent principles. The purer the combination, the nobler the metal."</p>
+                    </div>
+                    <p class="text-gold-100 mt-4">
+                        This understanding predated modern concepts of metallic composition and alloy formation. Imam al-Sadiq's laboratory experiments demonstrated how different metals could be transformed through controlled processes.
+                    </p>
+                </div>
+                
+                <!-- Teaching 2 -->
+                <div class="teaching-card p-8 rounded-lg mb-8 transition-all">
+                    <div class="flex items-center mb-4">
+                        <div class="gold-text mr-4">
+                            <i class="fas fa-vial text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold gold-text">Acid Preparation and Use</h3>
+                    </div>
+                    <p class="text-gold-100 mb-4">
+                        Imam al-Sadiq developed methods for preparing and concentrating mineral acids, including nitric acid (aqua fortis) and hydrochloric acid (spirit of salt). These acids became essential tools for later alchemists and chemists.
+                    </p>
+                    <div class="chemical-process">
+                        <h4 class="font-bold gold-text mb-2">Documented Process:</h4>
+                        <p class="text-gold-100">"Take equal parts of vitriol (iron sulfate) and saltpeter (potassium nitrate), distill in a glass vessel with a long neck, and collect the red fumes that dissolve metals."</p>
+                    </div>
+                    <p class="text-gold-100 mt-4">
+                        This represents one of the earliest descriptions of nitric acid production. Imam al-Sadiq emphasized safety measures and proper ventilation when working with corrosive substances.
+                    </p>
+                </div>
+                
+                <!-- Teaching 3 -->
+                <div class="teaching-card p-8 rounded-lg mb-8 transition-all">
+                    <div class="flex items-center mb-4">
+                        <div class="gold-text mr-4">
+                            <i class="fas fa-fire-alt text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold gold-text">Purification Processes</h3>
+                    </div>
+                    <p class="text-gold-100 mb-4">
+                        Imam al-Sadiq perfected various chemical operations including:
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div class="chemical-principle">
+                            <h4 class="font-bold gold-text mb-2">Calcination</h4>
+                            <p class="text-gold-100">Heating substances to high temperatures to drive off volatile components</p>
+                        </div>
+                        <div class="chemical-principle">
+                            <h4 class="font-bold gold-text mb-2">Distillation</h4>
+                            <p class="text-gold-100">Purifying liquids through vaporization and condensation</p>
+                        </div>
+                        <div class="chemical-principle">
+                            <h4 class="font-bold gold-text mb-2">Sublimation</h4>
+                            <p class="text-gold-100">Transition from solid to gas without passing through liquid phase</p>
+                        </div>
+                        <div class="chemical-principle">
+                            <h4 class="font-bold gold-text mb-2">Crystallization</h4>
+                            <p class="text-gold-100">Forming pure substances through controlled crystal growth</p>
+                        </div>
+                    </div>
+                    <p class="text-gold-100">
+                        These techniques, documented by Jabir, became standard laboratory procedures that are still fundamental to chemical practice today.
+                    </p>
+                </div>
+                
+                <!-- Teaching 4 -->
+                <div class="teaching-card p-8 rounded-lg transition-all">
+                    <div class="flex items-center mb-4">
+                        <div class="gold-text mr-4">
+                            <i class="fas fa-mortar-pestle text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold gold-text">Pharmaceutical Preparations</h3>
+                    </div>
+                    <p class="text-gold-100 mb-4">
+                        Imam al-Sadiq developed numerous medicinal compounds through chemical processes, including:
+                    </p>
+                    <ul class="list-disc pl-6 space-y-2 text-gold-100 mb-4">
+                        <li>Purified mercury compounds for medicinal use</li>
+                        <li>Silver nitrate (lunar caustic) for cauterization</li>
+                        <li>Various metallic oxides with therapeutic properties</li>
+                        <li>Distilled plant essences and essential oils</li>
+                    </ul>
+                    <div class="quote-card p-6 rounded-lg">
+                        <p class="text-gold-100 italic">"The physician must understand the nature of substances, their interactions, and proper dosages. Medicine without knowledge of its composition is like a sword in the hand of a child."</p>
+                        <p class="text-right gold-text font-medium">— Imam Ja'far al-Sadiq</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scientific Principles Section -->
+    <section id="principles" class="py-16 bg-dark-red">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold gold-text mb-4 serif">Scientific Principles</h2>
+                <p class="text-gold-100 max-w-2xl mx-auto">Foundational concepts in Imam al-Sadiq's chemical philosophy</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Principle 1 -->
+                <div class="article-card p-6 rounded-lg transition-all">
+                    <div class="gold-text mb-4 text-center">
+                        <i class="fas fa-balance-scale-left text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 gold-text text-center">Balance of Natures</h3>
+                    <p class="text-gold-100 mb-4">
+                        Imam al-Sadiq taught that all substances contain varying proportions of the four natures (hot, cold, wet, dry). Chemical transformations occur through altering these balances.
+                    </p>
+                    <div class="quote-card p-4 rounded">
+                        <p class="text-gold-100 italic text-sm">"When the wet and the dry combine in proper measure, life emerges. When the hot and cold find equilibrium, stability results."</p>
+                    </div>
+                </div>
+                
+                <!-- Principle 2 -->
+                <div class="article-card p-6 rounded-lg transition-all">
+                    <div class="gold-text mb-4 text-center">
+                        <i class="fas fa-seedling text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 gold-text text-center">Metallic Growth</h3>
+                    <p class="text-gold-100 mb-4">
+                        Metals were understood to grow and mature in the earth, with base metals potentially developing into nobler forms over time. This concept influenced later theories of transmutation.
+                    </p>
+                    <div class="quote-card p-4 rounded">
+                        <p class="text-gold-100 italic text-sm">"As the infant grows to maturity, so too does lead contain within it the potential for silver, and silver for gold, given proper cultivation."</p>
+                    </div>
+                </div>
+                
+                <!-- Principle 3 -->
+                <div class="article-card p-6 rounded-lg transition-all">
+                    <div class="gold-text mb-4 text-center">
+                        <i class="fas fa-microscope text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 gold-text text-center">Experimental Verification</h3>
+                    <p class="text-gold-100 mb-4">
+                        Imam al-Sadiq emphasized that theories must be tested through reproducible experiments. He established standards for laboratory practice and documentation.
+                    </p>
+                    <div class="quote-card p-4 rounded">
+                        <p class="text-gold-100 italic text-sm">"One experiment is worth a thousand opinions. What cannot be demonstrated should not be asserted as truth."</p>
+                    </div>
+                </div>
+                
+                <!-- Principle 4 -->
+                <div class="article-card p-6 rounded-lg transition-all">
+                    <div class="gold-text mb-4 text-center">
+                        <i class="fas fa-dna text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 gold-text text-center">Unity of Matter</h3>
+                    <p class="text-gold-100 mb-4">
+                        All substances were seen as different manifestations of the same underlying principles. This holistic view anticipated modern concepts of elemental composition.
+                    </p>
+                    <div class="quote-card p-4 rounded">
+                        <p class="text-gold-100 italic text-sm">"The world is one substance written in different forms, as words differ yet all are made of letters."</p>
+                    </div>
+                </div>
+                
+                <!-- Principle 5 -->
+                <div class="article-card p-6 rounded-lg transition-all">
+                    <div class="gold-text mb-4 text-center">
+                        <i class="fas fa-prescription-bottle-alt text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 gold-text text-center">Medicine from Minerals</h3>
+                    <p class="text-gold-100 mb-4">
+                        Imam al-Sadiq developed techniques to render toxic minerals into safe, effective medicines through purification and combination with other substances.
+                    </p>
+                    <div class="quote-card p-4 rounded">
+                        <p class="text-gold-100 italic text-sm">"The poison in the hand of the ignorant becomes medicine in the hand of the knowledgeable."</p>
+                    </div>
+                </div>
+                
+                <!-- Principle 6 -->
+                <div class="article-card p-6 rounded-lg transition-all">
+                    <div class="gold-text mb-4 text-center">
+                        <i class="fas fa-atom text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 gold-text text-center">Corpuscular Theory</h3>
+                    <p class="text-gold-100 mb-4">
+                        Imam al-Sadiq proposed that matter is composed of minute particles that combine in different ways, anticipating atomic theory by centuries.
+                    </p>
+                    <div class="quote-card p-4 rounded">
+                        <p class="text-gold-100 italic text-sm">"Substances are as buildings made of small bricks unseen to the eye. Change the arrangement and you change the substance."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jabir ibn Hayyan Section -->
+    <section class="py-16 bg-deep-black">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/3">
+                    <img src="https://worldhistoryedu.com/wp-content/uploads/2021/04/Jabir-ibn-Hayyan-biography-and-achievements.jpg" 
+                         alt="Jabir ibn Hayyan" 
+                         class="rounded-lg shadow-lg w-full border-2 border-gold">
+                </div>
+                <div class="lg:w-2/3">
+                    <h2 class="text-3xl font-bold gold-text mb-6 serif">Jabir ibn Hayyan: The Student Who Preserved the Knowledge</h2>
+                    <p class="text-gold-100 mb-6 text-lg">
+                        Jabir ibn Hayyan (c. 721-c. 815), known in Europe as Geber, was the most famous student of Imam Ja'far al-Sadiq in the chemical sciences. Through his extensive writings (over 3,000 treatises attributed to him), Jabir preserved and expanded upon the chemical teachings of his master.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="teaching-card p-6 rounded-lg">
+                            <h3 class="text-xl font-bold mb-3 gold-text">Major Works (Clickable Links)</h3>
+                            <ul class="list-disc pl-6 space-y-2 text-gold-100">
+                               <li> <a href="https://www.ghazali.org/books/kimya-eng.pdf">Kitab al-Kimya (Book of Chemistry)</a></li>
+                                <li>Kitab al-Sab'een (Book of Seventy)</li>
+                                <li>Kitab al-Mawazin (Book of Balances)</li>
+                                <li>Kitab al-Khawass (Book of Properties)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="teaching-card p-6 rounded-lg">
+                            <h3 class="text-xl font-bold mb-3 gold-text">Key Contributions</h3>
+                            <ul class="list-disc pl-6 space-y-2 text-gold-100">
+                                <li>Systematic classification of substances</li>
+                                <li>Development of laboratory equipment</li>
+                                <li>Discovery of numerous chemical processes</li>
+                                <li>Invention of the alembic for distillation</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="quote-card p-6 rounded-lg mt-6">
+                        <p class="text-gold-100 italic">"All that I have achieved in this science is due to the teachings of my master, Ja'far al-Sadiq, may God be pleased with him. He opened for me the doors to knowledge that were locked to others."</p>
+                        <p class="text-right gold-text font-medium">— Jabir ibn Hayyan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legacy Section -->
+    <section class="py-16 bg-dark-red">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold gold-text mb-4 serif">Scientific Legacy</h2>
+                <p class="text-gold-100 max-w-2xl mx-auto">Imam al-Sadiq's influence on the development of chemistry</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="timeline-item">
+                    <div class="timeline-dot">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3 class="text-xl font-bold gold-text mb-2">Transmission to Europe</h3>
+                    <p class="text-gold-100">
+                        Through Latin translations of Jabir's works (attributed to "Geber") in the 12th century, Imam al-Sadiq's chemical teachings became foundational to European alchemy and early chemistry. Key concepts like the sulfur-mercury theory of metals dominated metallurgy for centuries.
+                    </p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3 class="text-xl font-bold gold-text mb-2">Laboratory Tradition</h3>
+                    <p class="text-gold-100">
+                        The emphasis on systematic experimentation and laboratory techniques established by Imam al-Sadiq and Jabir became the standard approach in Islamic and later European chemistry. Many standard pieces of laboratory equipment were first described in their works.
+                    </p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot">
+                        <i class="fas fa-atom"></i>
+                    </div>
+                    <h3 class="text-xl font-bold gold-text mb-2">Modern Chemistry</h3>
+                    <p class="text-gold-100">
+                        While many specific theories were superseded, the methodological approach developed by Imam al-Sadiq - emphasizing reproducible experiments, precise measurement, and theoretical models based on observation - became the foundation of modern chemical science.
+                    </p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot">
+                        <i class="fas fa-prescription-bottle-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold gold-text mb-2">Pharmaceutical Chemistry</h3>
+                    <p class="text-gold-100">
+                        Imam al-Sadiq's methods for preparing and purifying medicinal compounds established pharmaceutical chemistry as a distinct discipline. Many of his preparation techniques remained in use until the modern era.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Further Reading Section -->
+    <section class="py-16 bg-deep-black">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold gold-text mb-4 serif">Further Reading</h2>
+                <p class="text-gold-100 max-w-2xl mx-auto">Explore more about Imam al-Sadiq's scientific legacy</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="article-card p-6 rounded-lg transition-all">
+                    <div class="gold-text mb-4">
+                        <i class="fas fa-book-open text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 gold-text">Primary Sources</h3>
+                    <ul class="space-y-2 text-gold-100 mb-4">
+                        <li>• Jabir ibn Hayyan's Works</li>
+                        <li>• Umm al-Kitab (attributed)</li>
+                        <li>• Alchemical fragments in Shia texts</li>
+                    </ul>
+                    <a href="#" class="inline-block text-sm gold-text hover:underline">View Sources →</a>
+                </div>
+                
+                <div class="article-card p-6 rounded-lg transition-all">
+                    <div class="gold-text mb-4">
+                        <i class="fas fa-graduation-cap text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 gold-text">Academic Studies</h3>
+                    <ul class="space-y-2 text-gold-100 mb-4">
+                        <li>• "Jabir and the Origins of Chemistry"</li>
+                        <li>• "The Scientific Method of the Ahl al-Bayt"</li>
+                        <li>• "Islamic Alchemy and Modern Science"</li>
+                    </ul>
+                    <a href="#" class="inline-block text-sm gold-text hover:underline">Read Studies →</a>
+                </div>
+                
+                <div class="article-card p-6 rounded-lg transition-all">
+                    <div class="gold-text mb-4">
+                        <i class="fas fa-video text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 gold-text">Documentaries</h3>
+                    <ul class="space-y-2 text-gold-100 mb-4">
+                        <li>• "The Golden Chain of Islamic Science"</li>
+                        <li>• "From Alchemy to Chemistry"</li>
+                        <li>• "Imam al-Sadiq: The Scholar of Medina"</li>
+                    </ul>
+                    <a href="#" class="inline-block text-sm gold-text hover:underline">Watch Now →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-bg pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- About Column -->
+                <div>
+                    <img src="https://chatgpt.com/s/m_6832b7dfed9881919cadca003227632c" alt="Imam and Science Logo" class="h-10 mb-4">
+                    <p class="text-gold-100 mb-4">Exploring the rich scientific heritage of Islamic civilization through well-researched articles and resources.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gold-100 hover-gold"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gold-100 hover-gold"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gold-100 hover-gold"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4 gold-text">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gold-100 hover-gold">Home</a></li>
+                        <li><a href="#" class="text-gold-100 hover-gold">About</a></li>
+                        <li><a href="#" class="text-gold-100 hover-gold">Imams</a></li>
+                        <li><a href="#" class="text-gold-100 hover-gold">Topics</a></li>
+                        <li><a href="#" class="text-gold-100 hover-gold">Resources</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Imams -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4 gold-text">Imams</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gold-100 hover-gold">Ali ibn Abi Talib</a></li>
+                        <li><a href="#" class="text-gold-100 hover-gold">Husayn ibn Ali</a></li>
+                        <li><a href="#" class="text-gold-100 hover-gold">Zayn al-Abidin</a></li>
+                        <li><a href="#" class="text-gold-100 hover-gold">Muhammad al-Baqir</a></li>
+                        <li><a href="#" class="text-gold-100 hover-gold">Ja'far al-Sadiq</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4 gold-text">Contact</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope text-gold-100 mt-1 mr-3"></i>
+                            <span class="text-gold-100">contact@imamandscience.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-globe text-gold-100 mt-1 mr-3"></i>
+                            <span class="text-gold-100">www.imamandscience.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gold-100 mb-4 md:mb-0">© 2023 Imam and Science. All rights reserved.</p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gold-100 hover-gold">Privacy Policy</a>
+                        <a href="#" class="text-gold-100 hover-gold">Terms of Use</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggle = document.getElementById('themeToggle');
+            const icon = themeToggle.querySelector('i');
+            const textSpan = themeToggle.querySelector('span');
+            
+            // Check for saved theme preference or use preferred color scheme
+            if (localStorage.getItem('theme') === 'light' || 
+                (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+                document.body.classList.add('light-mode');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                textSpan.textContent = 'Light Mode';
+            }
+            
+            // Toggle theme on button click
+            themeToggle.addEventListener('click', function() {
+                document.body.classList.toggle('light-mode');
+                
+                if (document.body.classList.contains('light-mode')) {
+                    localStorage.setItem('theme', 'light');
+                    icon.classList.remove('fa-moon');
+                    icon.classList.add('fa-sun');
+                    textSpan.textContent = 'Light Mode';
+                } else {
+                    localStorage.setItem('theme', 'dark');
+                    icon.classList.remove('fa-sun');
+                    icon.classList.add('fa-moon');
+                    textSpan.textContent = 'Dark Mode';
+                }
+            });
+            
+            // Mobile menu toggle
+            const mobileMenuButton = document.querySelector('.md\\:hidden');
+            const mobileMenu = document.querySelector('nav');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('block');
+                mobileMenu.classList.toggle('absolute');
+                mobileMenu.classList.toggle('bg-deep-black');
+                mobileMenu.classList.toggle('shadow-lg');
+                mobileMenu.classList.toggle('w-full');
+                mobileMenu.classList.toggle('left-0');
+                mobileMenu.classList.toggle('px-4');
+                mobileMenu.classList.toggle('py-4');
+                mobileMenu.classList.toggle('z-50');
+                mobileMenu.classList.toggle('border');
+                mobileMenu.classList.toggle('border-gold');
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

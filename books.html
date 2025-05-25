@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Islamic Library - Shia & Sunni Books | Quran with Translation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Scheherazade+New:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Amiri', serif;
+            background-color: #f8f5ee;
+            color: #333;
+        }
+        
+        .arabic {
+            font-family: 'Scheherazade New', serif;
+            direction: rtl;
+        }
+        
+        .book-card {
+            transition: all 0.3s ease;
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-color: #b78d65;
+        }
+        
+        .surah-card {
+            transition: all 0.3s ease;
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .surah-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-color: #b78d65;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #8b4513;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .active-nav:after {
+            width: 100%;
+        }
+        
+        .tab-button {
+            transition: all 0.3s ease;
+        }
+        
+        .tab-button.active {
+            background-color: #8b4513;
+            color: white;
+        }
+        
+        .quran-verse {
+            line-height: 2.5;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #b78d65;
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8b4513;
+        }
+        
+        /* Quran navigation sidebar */
+        .quran-sidebar {
+            height: calc(100vh - 150px);
+            overflow-y: auto;
+        }
+        
+        .surah-link {
+            transition: all 0.2s ease;
+        }
+        
+        .surah-link:hover {
+            background-color: #f3e9d9;
+        }
+        
+        .surah-link.active {
+            background-color: #e7d5b9;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h1 class="text-3xl font-bold text-amber-900">Islamic Library</h1>
+                    <p class="text-gray-600">Shia & Sunni Books | Quran with Translation</p>
+                </div>
+                <nav class="flex space-x-1 md:space-x-6">
+                    <a href="#quran" class="nav-link text-gray-700 hover:text-amber-900 px-2 py-1">Quran</a>
+                    <a href="#shia-books" class="nav-link text-gray-700 hover:text-amber-900 px-2 py-1">Shia Books</a>
+                    <a href="#sunni-books" class="nav-link text-gray-700 hover:text-amber-900 px-2 py-1">Sunni Books</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-amber-900 px-2 py-1">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-amber-50 py-12">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <h2 class="text-4xl font-bold text-amber-900 mb-4">Comprehensive Islamic Library</h2>
+                <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+                    Explore the Quran with translations, authentic Shia and Sunni books, and deepen your understanding of Islam
+                </p>
+                <div class="flex justify-center gap-4 mt-8">
+                    <a href="#quran" class="bg-amber-800 hover:bg-amber-900 text-white px-6 py-3 rounded-full font-medium transition-all">
+                        Read Quran
+                    </a>
+                    <a href="#shia-books" class="bg-white hover:bg-amber-100 text-amber-900 px-6 py-3 rounded-full font-medium transition-all border border-amber-800">
+                        Shia Books
+                    </a>
+                    <a href="#sunni-books" class="bg-white hover:bg-amber-100 text-amber-900 px-6 py-3 rounded-full font-medium transition-all border border-amber-800">
+                        Sunni Books
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quran Section -->
+    <section id="quran" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-amber-900 mb-2">The Holy Quran</h2>
+                <div class="w-24 h-1 bg-amber-800 mx-auto mb-4"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Read the Quran with translation in multiple languages. Select a surah to begin reading.
+                </p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Quran Sidebar Navigation -->
+                <div class="lg:w-1/4 bg-amber-50 p-4 rounded-lg quran-sidebar">
+                    <div class="mb-4">
+                        <input type="text" placeholder="Search Surah..." class="w-full px-4 py-2 rounded border border-amber-300 focus:outline-none focus:ring-2 focus:ring-amber-500">
+                    </div>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-1 gap-2">
+                        <!-- Surah links will be generated by JavaScript -->
+                    </div>
+                </div>
+                
+                <!-- Quran Content -->
+                <div class="lg:w-3/4">
+                    <div class="bg-amber-50 p-4 rounded-lg mb-6">
+                        <div class="flex overflow-x-auto gap-2">
+                            <button class="tab-button px-4 py-2 rounded font-medium" data-lang="en">English</button>
+                            <button class="tab-button px-4 py-2 rounded font-medium" data-lang="ur">Urdu</button>
+                            <button class="tab-button px-4 py-2 rounded font-medium" data-lang="fr">French</button>
+                            <button class="tab-button px-4 py-2 rounded font-medium" data-lang="es">Spanish</button>
+                            <button class="tab-button px-4 py-2 rounded font-medium active" data-lang="ar">Arabic</button>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow">
+                        <div class="text-center mb-8">
+                            <h3 class="text-2xl font-bold text-amber-900" id="surah-name">Surah Al-Fatiha</h3>
+                            <p class="text-gray-600" id="surah-info">Meccan - 7 verses</p>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <div class="flex justify-between items-center mb-4">
+                                <h4 class="text-lg font-bold text-amber-800">Bismillah</h4>
+                                <span class="text-sm text-gray-500">1:1</span>
+                            </div>
+                            <div class="quran-verse arabic text-3xl text-right mb-4">
+                                بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
+                            </div>
+                            <div class="text-gray-700 translation-en">
+                                In the name of Allah, the Entirely Merciful, the Especially Merciful.
+                            </div>
+                            <div class="text-gray-700 translation-ur hidden">
+                                شروع کرتا ہوں اللخ کے نام سے جو بڑا مہربان نہایت رحم والا ہے
+                            </div>
+                            <div class="text-gray-700 translation-fr hidden">
+                                Au nom d'Allah, le Tout Miséricordieux, le Très Miséricordieux.
+                            </div>
+                            <div class="text-gray-700 translation-es hidden">
+                                En el nombre de Allah, el Clemente, el Misericordioso.
+                            </div>
+                        </div>
+                        
+                        <div id="quran-verses">
+                            <!-- Verses will be loaded by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shia Books Section -->
+    <!-- Shia Books Section -->
+<section id="shia-books" class="py-16 bg-amber-50">
+  <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-amber-900 mb-2">Shia Islamic Books</h2>
+          <div class="w-24 h-1 bg-amber-800 mx-auto mb-4"></div>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+              Authentic Shia books from the Ahl al-Bayt (AS) and renowned Shia scholars
+          </p>
+      </div>
+      
+      <!-- Categories Tabs -->
+      <div class="flex overflow-x-auto gap-2 mb-8 pb-2">
+          <button class="category-tab active px-4 py-2 rounded font-medium bg-amber-800 text-white" data-category="all">All</button>
+          <button class="category-tab px-4 py-2 rounded font-medium bg-white text-amber-800 border border-amber-800" data-category="hadith">Hadith</button>
+          <button class="category-tab px-4 py-2 rounded font-medium bg-white text-amber-800 border border-amber-800" data-category="fiqh">Fiqh</button>
+          <button class="category-tab px-4 py-2 rounded font-medium bg-white text-amber-800 border border-amber-800" data-category="aqeedah">Aqeedah</button>
+          <button class="category-tab px-4 py-2 rounded font-medium bg-white text-amber-800 border border-amber-800" data-category="history">History</button>
+          <button class="category-tab px-4 py-2 rounded font-medium bg-white text-amber-800 border border-amber-800" data-category="duas">Duas & Ziyarat</button>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Hadith Collections -->
+          <div class="book-card rounded-lg overflow-hidden" data-category="hadith">
+              <div class="p-6">
+                  <div class="flex items-center mb-4">
+                      <div class="bg-amber-100 p-3 rounded-full mr-4">
+                          <i class="fas fa-book text-amber-800 text-xl"></i>
+                      </div>
+                      <h3 class="text-xl font-bold text-amber-900">Al-Kafi</h3>
+                  </div>
+                  <p class="text-gray-700 mb-4">
+                      The most comprehensive Shia hadith collection by Shaykh al-Kulayni with over 16,000 narrations.
+                  </p>
+                  <div class="flex justify-between items-center">
+                      <span class="text-sm text-gray-500">By Shaykh al-Kulayni</span>
+                      <a href="https://www.holybooks.com/wp-content/uploads/Al-Kafi.pdf" class="text-amber-800 hover:text-amber-900 font-medium">Read →</a>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="book-card rounded-lg overflow-hidden" data-category="hadith">
+            <div class="p-6">
+                <div class="flex items-center mb-4">
+                    <div class="bg-amber-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-book text-amber-800 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-amber-900">Man La Yahduruhu al-Faqih Volume-I</h3>
+                </div>
+                <p class="text-gray-700 mb-4">
+                    Hadith collection focusing on legal traditions compiled by Shaykh Saduq.
+                </p>
+                <div class="flex justify-between items-center">
+                    <span class="text-sm text-gray-500">By Shaykh Saduq</span>
+                    <a href="https://hubeali.com/books/Urdu-Books/ManLaYadharulFaqih/ManLaYadharulFaqih1of4.pdf" class="text-amber-800 hover:text-amber-900 font-medium">Read →</a>
+                </div>
+            </div>
+        </div>
+        <div class="book-card rounded-lg overflow-hidden" data-category="hadith">
+          <div class="p-6">
+              <div class="flex items-center mb-4">
+                  <div class="bg-amber-100 p-3 rounded-full mr-4">
+                      <i class="fas fa-book text-amber-800 text-xl"></i>
+                  </div>
+                  <h3 class="text-xl font-bold text-amber-900">Man La Yahduruhu al-Faqih Volume-I</h3>
+              </div>
+              <p class="text-gray-700 mb-4">
+                  Hadith collection focusing on legal traditions compiled by Shaykh Saduq.
+              </p>
+              <div class="flex justify-between items-center">
+                  <span class="text-sm text-gray-500">By Shaykh Saduq</span>
+                  <a href="https://hubeali.com/books/Urdu-Books/ManLaYadharulFaqih/ManLaYadharulFaqih1of4.pdf" class="text-amber-800 hover:text-amber-900 font-medium">Read →</a>
+              </div>
+          </div>
+      </div>
+          
+          <div class="book-card rounded-lg overflow-hidden" data-category="hadith">
+              <div class="p-6">
+                  <div class="flex items-center mb-4">
+                      <div class="bg-amber-100 p-3 rounded-full mr-4">
+                          <i class="fas fa-book text-amber-800 text-xl"></i>
+                      </div>
+                      <h3 class="text-xl font-bold text-amber-900">Bihar al-Anwar</h3>
+                  </div>
+                  <p class="text-gray-700 mb-4">
+                      Massive encyclopedia of Shia hadith (110 volumes) by Allama Majlisi covering all Islamic topics.
+                  </p>
+                  <div class="flex justify-between items-center">
+                      <span class="text-sm text-gray-500">By Allama Majlisi</span>
+                      <a href="https://hubeali.com/books/English-Books/BiharAlAnwaar/BiharAlAnwaar_V1.pdf" class="text-amber-800 hover:text-amber-900 font-medium">Read →</a>
+                  </div>
+              </div>
+          </div>
+          
+          <!-- Fiqh Books -->
+          <div class="book-card rounded-lg overflow-hidden" data-category="fiqh">
+              <div class="p-6">
+                  <div class="flex items-center mb-4">
+                      <div class="bg-amber-100 p-3 rounded-full mr-4">
+                          <i class="fas fa-book text-amber-800 text-xl"></i>
+                      </div>
+                      <h3 class="text-xl font-bold text-amber-900">Jawahir al-Kalam</h3>
+                  </div>
+                  <p class="text-gray-700 mb-4">
+                      The most detailed Shia fiqh reference by Shaykh Muhammad Hasan al-Najafi (43 volumes).
+                  </p>
+                  <div class="flex justify-between items-center">
+                      <span class="text-sm text-gray-500">By Shaykh al-Najafi</span>
+                      <a href="#" class="text-amber-800 hover:text-amber-900 font-medium">Read →</a>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="book-card rounded-lg overflow-hidden" data-category="fiqh">
+              <div class="p-6">
+                  <div class="flex items-center mb-4">
+                      <div class="bg-amber-100 p-3 rounded-full mr-4">
+                          <i class="fas fa-book text-amber-800 text-xl"></i>
+                      </div>
+                      <h3 class="text-xl font-bold text-amber-900">Urwat al-Wuthqa</h3>
+                  </div>
+                  <p class="text-gray-700 mb-4">
+                      Foundational text of modern Shia jurisprudence by Ayatullah Sayyid Kazim Yazdi.
+                  </p>
+                  <div class="flex justify-between items-center">
+                      <span class="text-sm text-gray-500">By Sayyid Yazdi</span>
+                      <a href="#" class="text-amber-800 hover:text-amber-900 font-medium">Read →</a>
+                  </div>
+              </div>
+          </div>
+          
+          <!-- Aqeedah Books -->
+          <div class="book-card rounded-lg overflow-hidden" data-category="aqeedah">
+              <div class="p-6">
+                  <div class="flex items-center mb-4">
+                      <div class="bg-amber-100 p-3 rounded-full mr-4">
+                          <i class="fas fa-book text-amber-800 text-xl"></i>
+                      </div>
+                      <h3 class="text-xl font-bold text-amber-900">Al-I'tiqadat</h3>
+                  </div>
+                  <p class="text-gray-700 mb-4">
+                      Foundational text on Shia creed and theology by Shaykh Saduq.
+                  </p>
+                  <div class="flex justify-between items-center">
+                      <span class="text-sm text-gray-500">By Shaykh Saduq</span>
+                      <a href="#" class="text-amber-800 hover:text-amber-900 font-medium">Read →</a>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="book-card rounded-lg overflow-hidden" data-category="aqeedah">
+              <div class="p-6">
+                  <div class="flex items-center mb-4">
+                      <div class="bg-amber-100 p-3 rounded-full mr-4">
+                          <i class="fas fa-book text-amber-800 text-xl"></i>
+                      </div>
+                      <h3 class="text-xl font-bold text-amber-900">Tawhid al-Mufaddal</h3>
+                  </div>
+                  <p class="text-gray-700 mb-4">
+                      Theological discourse on monotheism by Imam Ja'far al-Sadiq (AS) to al-Mufaddal.
+                  </p>
+                  <div class="flex justify-between items-center">
+                      <span class="text-sm text-gray-500">By Imam al-Sadiq (AS)</span>
+                      <a href="#" class="text-amber-800 hover:text-amber-900 font-medium">Read →</a>
+                  </div>
+              </div>
+          </div>
+          
+          <!-- History Books -->
+          <div class="book-card rounded-lg overflow-hidden" data-category="history">
+              <div class="p-6">
+                  <div class="flex items-center mb-4">
+                      <div class="bg-amber-100 p-3 rounded-full mr-4">
+                          <i class="fas fa-book text-amber-800 text-xl"></i>
+                      </div>
+                      <h3 class="text-xl font-bold text-amber-900">Kitab al-Irshad</h3>
+                  </div>
+                  <p class="text-gray-700 mb-4">
+                      Biographies of the Twelve Imams (AS) by Shaykh al-Mufid.
+                  </p>
+                  <div class="flex justify-between items-center">
+                      <span class="text-sm text-gray-500">By Shaykh al-Mufid</span>
+                      <a href="#" class="text-amber-800 hover:text-amber-900 font-medium">Read →</a>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="book-card rounded-lg overflow-hidden" data-category="history">
+              <div class="p-6">
+                  <div class="flex items-center mb-4">
+                      <div class="bg-amber-100 p-3 rounded-full mr-4">
+                          <i class="fas fa-book text-amber-800 text-xl"></i>
+                      </div>
+                      <h3 class="text-xl font-bold text-amber-900">Nafs al-Mahmum</h3>
+                  </div>
+                  <p class="text-gray-700 mb-4">
+                      Detailed account of the tragedy of Karbala by Shaykh Abbas Qummi.
+                  </p>
+                  <div class="flex justify-between items-center">
+                      <span class="text-sm text-gray-500">By Shaykh Qummi</span>
+                      <a href="#" class="text-amber-800 hover:text-amber-900 font-medium">Read →</a>
+                  </div>
+              </div>
+          </div>
+          
+          <!-- Dua Books -->
+          <div class="book-card rounded-lg overflow-hidden" data-category="duas">
+              <div class="p-6">
+                  <div class="flex items-center mb-4">
+                      <div class="bg-amber-100 p-3 rounded-full mr-4">
+                          <i class="fas fa-book text-amber-800 text-xl"></i>
+                      </div>
+                      <h3 class="text-xl font-bold text-amber-900">Sahifa Sajjadiyya</h3>
+                  </div>
+                  <p class="text-gray-700 mb-4">
+                      The "Psalms of the Ahlul Bayt" - supplications by Imam Zayn al-Abidin (AS).
+                  </p>
+                  <div class="flex justify-between items-center">
+                      <span class="text-sm text-gray-500">By Imam Sajjad (AS)</span>
+                      <a href="#" class="text-amber-800 hover:text-amber-900 font-medium">Read →</a>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="book-card rounded-lg overflow-hidden" data-category="duas">
+              <div class="p-6">
+                  <div class="flex items-center mb-4">
+                      <div class="bg-amber-100 p-3 rounded-full mr-4">
+                          <i class="fas fa-book text-amber-800 text-xl"></i>
+                      </div>
+                      <h3 class="text-xl font-bold text-amber-900">Mafatih al-Jinan</h3>
+                  </div>
+                  <p class="text-gray-700 mb-4">
+                      Comprehensive collection of supplications, ziyarat and acts of worship.
+                  </p>
+                  <div class="flex justify-between items-center">
+                      <span class="text-sm text-gray-500">By Shaykh Qummi</span>
+                      <a href="#" class="text-amber-800 hover:text-amber-900 font-medium">Read →</a>
+                  </div>
+              </div>
+          </div>
+          
+          <!-- Tafsir Books -->
+          <div class="book-card rounded-lg overflow-hidden" data-category="aqeedah">
+              <div class="p-6">
+                  <div class="flex items-center mb-4">
+                      <div class="bg-amber-100 p-3 rounded-full mr-4">
+                          <i class="fas fa-book text-amber-800 text-xl"></i>
+                      </div>
+                      <h3 class="text-xl font-bold text-amber-900">Tafsir al-Mizan</h3>
+                  </div>
+                  <p class="text-gray-700 mb-4">
+                      Philosophical Quranic exegesis by Allama Tabatabai (20 volumes).
+                  </p>
+                  <div class="flex justify-between items-center">
+                      <span class="text-sm text-gray-500">By Allama Tabatabai</span>
+                      <a href="#" class="text-amber-800 hover:text-amber-900 font-medium">Read →</a>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="book-card rounded-lg overflow-hidden" data-category="aqeedah">
+              <div class="p-6">
+                  <div class="flex items-center mb-4">
+                      <div class="bg-amber-100 p-3 rounded-full mr-4">
+                          <i class="fas fa-book text-amber-800 text-xl"></i>
+                      </div>
+                      <h3 class="text-xl font-bold text-amber-900">Nahj al-Balagha</h3>
+                  </div>
+                  <p class="text-gray-700 mb-4">
+                      Sermons, letters and sayings of Imam Ali (AS) compiled by Sharif al-Radi.
+                  </p>
+                  <div class="flex justify-between items-center">
+                      <span class="text-sm text-gray-500">By Sharif al-Radi</span>
+                      <a href="#" class="text-amber-800 hover:text-amber-900 font-medium">Read →</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      <div class="text-center mt-12">
+          <a href="#" class="inline-block bg-amber-800 hover:bg-amber-900 text-white px-8 py-3 rounded-full font-medium transition-all">
+              View All 150+ Shia Books
+          </a>
+      </div>
+  </div>
+</section>
+
+    <!-- Sunni Books Section -->
+    <section id="sunni-books" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-amber-900 mb-2">Sunni Islamic Books</h2>
+                <div class="w-24 h-1 bg-amber-800 mx-auto mb-4"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Authentic Sunni books from the major schools of thought and renowned scholars
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Book 1 -->
+                <div class="book-card rounded-lg overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-book text-amber-800 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-amber-900">Sahih al-Bukhari</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            The most authentic book of hadith after the Quran, containing over 7,000 hadiths compiled by Imam Bukhari.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">By Imam Bukhari</span>
+                            <a href="#" class="text-amber-800 hover:text-amber-900 font-medium">Read →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Book 2 -->
+                <div class="book-card rounded-lg overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-book text-amber-800 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-amber-900">Sahih Muslim</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            The second most authentic collection of hadith, compiled by Imam Muslim, containing about 7,500 hadiths.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">By Imam Muslim</span>
+                            <a href="#" class="text-amber-800 hover:text-amber-900 font-medium">Read →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Book 3 -->
+                <div class="book-card rounded-lg overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-book text-amber-800 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-amber-900">Riyad as-Salihin</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            A collection of hadith on ethics, manners, worship, and other topics compiled by Imam Nawawi.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">By Imam Nawawi</span>
+                            <a href="#" class="text-amber-800 hover:text-amber-900 font-medium">Read →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Book 4 -->
+                <div class="book-card rounded-lg overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-book text-amber-800 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-amber-900">Tafsir ibn Kathir</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            A classic Sunni exegesis of the Quran by Ibn Kathir, known for its reliance on hadith and early Islamic scholarship.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">By Ibn Kathir</span>
+                            <a href="#" class="text-amber-800 hover:text-amber-900 font-medium">Read →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Book 5 -->
+                <div class="book-card rounded-lg overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-book text-amber-800 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-amber-900">Al-Adab al-Mufrad</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            A collection of hadith on manners and etiquette compiled by Imam Bukhari.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">By Imam Bukhari</span>
+                            <a href="#" class="text-amber-800 hover:text-amber-900 font-medium">Read →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Book 6 -->
+                <div class="book-card rounded-lg overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-book text-amber-800 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-amber-900">Forty Hadith Qudsi</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            A collection of 40 sacred hadith where the Prophet (PBUH) relates words from Allah that are not part of the Quran.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Various Scholars</span>
+                            <a href="#" class="text-amber-800 hover:text-amber-900 font-medium">Read →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block bg-amber-800 hover:bg-amber-900 text-white px-8 py-3 rounded-full font-medium transition-all">
+                    View All Sunni Books
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-amber-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-amber-900 mb-2">Contact Us</h2>
+                <div class="w-24 h-1 bg-amber-800 mx-auto mb-4"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Have questions or suggestions? We'd love to hear from you.
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow">
+                <form>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="name" class="block text-gray-700 mb-2">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-amber-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 mb-2">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-amber-500">
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label for="subject" class="block text-gray-700 mb-2">Subject</label>
+                        <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-amber-500">
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-gray-700 mb-2">Message</label>
+                        <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-amber-500"></textarea>
+                    </div>
+                    <button type="submit" class="bg-amber-800 hover:bg-amber-900 text-white px-6 py-3 rounded font-medium transition-all">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-amber-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Islamic Library</h3>
+                    <p class="mb-4">
+                        A comprehensive collection of Islamic books from both Shia and Sunni traditions, along with the complete Quran with translations.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-amber-200 text-xl"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white hover:text-amber-200 text-xl"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white hover:text-amber-200 text-xl"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white hover:text-amber-200 text-xl"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#quran" class="hover:text-amber-200 transition">Quran</a></li>
+                        <li><a href="#shia-books" class="hover:text-amber-200 transition">Shia Books</a></li>
+                        <li><a href="#sunni-books" class="hover:text-amber-200 transition">Sunni Books</a></li>
+                        <li><a href="#contact" class="hover:text-amber-200 transition">Contact</a></li>
+                        <li><a href="#" class="hover:text-amber-200 transition">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Newsletter</h3>
+                    <p class="mb-4">Subscribe to our newsletter for updates on new books and features.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 w-full rounded-l text-gray-800">
+                        <button class="bg-amber-800 hover:bg-amber-700 px-4 py-2 rounded-r">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-amber-800 mt-8 pt-8 text-center">
+                <p>&copy; 2023 Islamic Library. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Active nav link highlighting
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.forEach(l => l.classList.remove('active-nav'));
+                this.classList.add('active-nav');
+            });
+        });
+
+        // Quran translation tabs
+        const tabButtons = document.querySelectorAll('.tab-button');
+        
+        tabButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // Get language
+                const lang = this.dataset.lang;
+                
+                // Hide all translations
+                document.querySelectorAll('[class^="translation-"]').forEach(el => {
+                    el.classList.add('hidden');
+                });
+                
+                // Show selected translation
+                document.querySelectorAll(`.translation-${lang}`).forEach(el => {
+                    el.classList.remove('hidden');
+                });
+            });
+        });
+
+        // Quran surah data
+        const surahs = [
+            { name: "Al-Fatiha", verses: 7, type: "Meccan", index: 1 },
+            { name: "Al-Baqara", verses: 286, type: "Medinan", index: 2 },
+            { name: "Aal-e-Imran", verses: 200, type: "Medinan", index: 3 },
+            { name: "An-Nisa", verses: 176, type: "Medinan", index: 4 },
+            { name: "Al-Ma'ida", verses: 120, type: "Medinan", index: 5 },
+            { name: "Al-An'am", verses: 165, type: "Meccan", index: 6 },
+            { name: "Al-A'raf", verses: 206, type: "Meccan", index: 7 },
+            { name: "Al-Anfal", verses: 75, type: "Medinan", index: 8 },
+            { name: "At-Tawba", verses: 129, type: "Medinan", index: 9 },
+            { name: "Yunus", verses: 109, type: "Meccan", index: 10 },
+            { name: "Hud", verses: 123, type: "Meccan", index: 11 },
+            { name: "Yusuf", verses: 111, type: "Meccan", index: 12 },
+            { name: "Ar-Ra'd", verses: 43, type: "Medinan", index: 13 },
+            { name: "Ibrahim", verses: 52, type: "Meccan", index: 14 },
+            { name: "Al-Hijr", verses: 99, type: "Meccan", index: 15 },
+            { name: "An-Nahl", verses: 128, type: "Meccan", index: 16 },
+            { name: "Al-Isra", verses: 111, type: "Meccan", index: 17 },
+            { name: "Al-Kahf", verses: 110, type: "Meccan", index: 18 },
+            { name: "Maryam", verses: 98, type: "Meccan", index: 19 },
+            { name: "Ta-Ha", verses: 135, type: "Meccan", index: 20 },
+            { name: "Al-Anbiya", verses: 112, type: "Meccan", index: 21 },
+            { name: "Al-Hajj", verses: 78, type: "Medinan", index: 22 },
+            { name: "Al-Mu'minun", verses: 118, type: "Meccan", index: 23 },
+            { name: "An-Nur", verses: 64, type: "Medinan", index: 24 },
+            { name: "Al-Furqan", verses: 77, type: "Meccan", index: 25 },
+            { name: "Ash-Shu'ara", verses: 227, type: "Meccan", index: 26 },
+            { name: "An-Naml", verses: 93, type: "Meccan", index: 27 },
+            { name: "Al-Qasas", verses: 88, type: "Meccan", index: 28 },
+            { name: "Al-Ankabut", verses: 69, type: "Meccan", index: 29 },
+            { name: "Ar-Rum", verses: 60, type: "Meccan", index: 30 },
+            { name: "Luqman", verses: 34, type: "Meccan", index: 31 },
+            { name: "As-Sajda", verses: 30, type: "Meccan", index: 32 },
+            { name: "Al-Ahzab", verses: 73, type: "Medinan", index: 33 },
+            { name: "Saba", verses: 54, type: "Meccan", index: 34 },
+            { name: "Fatir", verses: 45, type: "Meccan", index: 35 },
+            { name: "Ya-Sin", verses: 83, type: "Meccan", index: 36 },
+            { name: "As-Saffat", verses: 182, type: "Meccan", index: 37 },
+            { name: "Sad", verses: 88, type: "Meccan", index: 38 },
+            { name: "Az-Zumar", verses: 75, type: "Meccan", index: 39 },
+            { name: "Ghafir", verses: 85, type: "Meccan", index: 40 },
+            { name: "Fussilat", verses: 54, type: "Meccan", index: 41 },
+            { name: "Ash-Shura", verses: 53, type: "Meccan", index: 42 },
+            { name: "Az-Zukhruf", verses: 89, type: "Meccan", index: 43 },
+            { name: "Ad-Dukhan", verses: 59, type: "Meccan", index: 44 },
+            { name: "Al-Jathiya", verses: 37, type: "Meccan", index: 45 },
+            { name: "Al-Ahqaf", verses: 35, type: "Meccan", index: 46 },
+            { name: "Muhammad", verses: 38, type: "Medinan", index: 47 },
+            { name: "Al-Fath", verses: 29, type: "Medinan", index: 48 },
+            { name: "Al-Hujurat", verses: 18, type: "Medinan", index: 49 },
+            { name: "Qaf", verses: 45, type: "Meccan", index: 50 },
+            { name: "Adh-Dhariyat", verses: 60, type: "Meccan", index: 51 },
+            { name: "At-Tur", verses: 49, type: "Meccan", index: 52 },
+            { name: "An-Najm", verses: 62, type: "Meccan", index: 53 },
+            { name: "Al-Qamar", verses: 55, type: "Meccan", index: 54 },
+            { name: "Ar-Rahman", verses: 78, type: "Medinan", index: 55 },
+            { name: "Al-Waqi'a", verses: 96, type: "Meccan", index: 56 },
+            { name: "Al-Hadid", verses: 29, type: "Medinan", index: 57 },
+            { name: "Al-Mujadila", verses: 22, type: "Medinan", index: 58 },
+            { name: "Al-Hashr", verses: 24, type: "Medinan", index: 59 },
+            { name: "Al-Mumtahina", verses: 13, type: "Medinan", index: 60 },
+            { name: "As-Saff", verses: 14, type: "Medinan", index: 61 },
+            { name: "Al-Jumu'a", verses: 11, type: "Medinan", index: 62 },
+            { name: "Al-Munafiqun", verses: 11, type: "Medinan", index: 63 },
+            { name: "At-Taghabun", verses: 18, type: "Medinan", index: 64 },
+            { name: "At-Talaq", verses: 12, type: "Medinan", index: 65 },
+            { name: "At-Tahrim", verses: 12, type: "Medinan", index: 66 },
+            { name: "Al-Mulk", verses: 30, type: "Meccan", index: 67 },
+            { name: "Al-Qalam", verses: 52, type: "Meccan", index: 68 },
+            { name: "Al-Haqqa", verses: 52, type: "Meccan", index: 69 },
+            { name: "Al-Ma'arij", verses: 44, type: "Meccan", index: 70 },
+            { name: "Nuh", verses: 28, type: "Meccan", index: 71 },
+            { name: "Al-Jinn", verses: 28, type: "Meccan", index: 72 },
+            { name: "Al-Muzzammil", verses: 20, type: "Meccan", index: 73 },
+            { name: "Al-Muddathir", verses: 56, type: "Meccan", index: 74 },
+            { name: "Al-Qiyama", verses: 40, type: "Meccan", index: 75 },
+            { name: "Al-Insan", verses: 31, type: "Medinan", index: 76 },
+            { name: "Al-Mursalat", verses: 50, type: "Meccan", index: 77 },
+            { name: "An-Naba", verses: 40, type: "Meccan", index: 78 },
+            { name: "An-Nazi'at", verses: 46, type: "Meccan", index: 79 },
+            { name: "Abasa", verses: 42, type: "Meccan", index: 80 },
+            { name: "At-Takwir", verses: 29, type: "Meccan", index: 81 },
+            { name: "Al-Infitar", verses: 19, type: "Meccan", index: 82 },
+            { name: "Al-Mutaffifin", verses: 36, type: "Meccan", index: 83 },
+            { name: "Al-Inshiqaq", verses: 25, type: "Meccan", index: 84 },
+            { name: "Al-Buruj", verses: 22, type: "Meccan", index: 85 },
+            { name: "At-Tariq", verses: 17, type: "Meccan", index: 86 },
+            { name: "Al-A'la", verses: 19, type: "Meccan", index: 87 },
+            { name: "Al-Ghashiya", verses: 26, type: "Meccan", index: 88 },
+            { name: "Al-Fajr", verses: 30, type: "Meccan", index: 89 },
+            { name: "Al-Balad", verses: 20, type: "Meccan", index: 90 },
+            { name: "Ash-Shams", verses: 15, type: "Meccan", index: 91 },
+            { name: "Al-Lail", verses: 21, type: "Meccan", index: 92 },
+            { name: "Ad-Duha", verses: 11, type: "Meccan", index: 93 },
+            { name: "Al-Inshirah", verses: 8, type: "Meccan", index: 94 },
+            { name: "At-Tin", verses: 8, type: "Meccan", index: 95 },
+            { name: "Al-Alaq", verses: 19, type: "Meccan", index: 96 },
+            { name: "Al-Qadr", verses: 5, type: "Meccan", index: 97 },
+            { name: "Al-Bayyina", verses: 8, type: "Medinan", index: 98 },
+            { name: "Az-Zalzala", verses: 8, type: "Medinan", index: 99 },
+            { name: "Al-Adiyat", verses: 11, type: "Meccan", index: 100 },
+            { name: "Al-Qari'a", verses: 11, type: "Meccan", index: 101 },
+            { name: "At-Takathur", verses: 8, type: "Meccan", index: 102 },
+            { name: "Al-Asr", verses: 3, type: "Meccan", index: 103 },
+            { name: "Al-Humaza", verses: 9, type: "Meccan", index: 104 },
+            { name: "Al-Fil", verses: 5, type: "Meccan", index: 105 },
+            { name: "Quraysh", verses: 4, type: "Meccan", index: 106 },
+            { name: "Al-Ma'un", verses: 7, type: "Meccan", index: 107 },
+            { name: "Al-Kawthar", verses: 3, type: "Meccan", index: 108 },
+            { name: "Al-Kafirun", verses: 6, type: "Meccan", index: 109 },
+            { name: "An-Nasr", verses: 3, type: "Medinan", index: 110 },
+            { name: "Al-Masad", verses: 5, type: "Meccan", index: 111 },
+            { name: "Al-Ikhlas", verses: 4, type: "Meccan", index: 112 },
+            { name: "Al-Falaq", verses: 5, type: "Meccan", index: 113 },
+            { name: "An-Nas", verses: 6, type: "Meccan", index: 114 }
+        ];
+
+        // Generate surah links
+        const surahLinksContainer = document.querySelector('.quran-sidebar .grid');
+        
+        surahs.forEach(surah => {
+            const surahLink = document.createElement('a');
+            surahLink.href = '#';
+            surahLink.className = 'surah-link block px-3 py-2 rounded text-gray-700 hover:bg-amber-100';
+            surahLink.textContent = `${surah.index}. ${surah.name} (${surah.verses})`;
+            surahLink.dataset.index = surah.index;
+            
+            surahLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remove active class from all links
+                document.querySelectorAll('.surah-link').forEach(link => {
+                    link.classList.remove('active');
+                });
+                
+                // Add active class to clicked link
+                this.classList.add('active');
+                
+                // Update surah info
+                document.getElementById('surah-name').textContent = `Surah ${surah.name}`;
+                document.getElementById('surah-info').textContent = `${surah.type} - ${surah.verses} verses`;
+                
+                // In a real app, you would load the verses for this surah from an API
+                // For this example, we'll just show a placeholder
+                const versesContainer = document.getElementById('quran-verses');
+                versesContainer.innerHTML = `
+                    <div class="mb-8">
+                        <div class="flex justify-between items-center mb-4">
+                            <h4 class="text-lg font-bold text-amber-800">Verse 1</h4>
+                            <span class="text-sm text-gray-500">${surah.index}:1</span>
+                        </div>
+                        <div class="quran-verse arabic text-3xl text-right mb-4">
+                            بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
+                        </div>
+                        <div class="text-gray-700 translation-en">
+                            In the name of Allah, the Entirely Merciful, the Especially Merciful.
+                        </div>
+                        <div class="text-gray-700 translation-ur hidden">
+                            شروع کرتا ہوں اللخ کے نام سے جو بڑا مہربان نہایت رحم والا ہے
+                        </div>
+                        <div class="text-gray-700 translation-fr hidden">
+                            Au nom d'Allah, le Tout Miséricordieux, le Très Miséricordieux.
+                        </div>
+                        <div class="text-gray-700 translation-es hidden">
+                            En el nombre de Allah, el Clemente, el Misericordioso.
+                        </div>
+                    </div>
+                    <div class="text-center py-8">
+                        <p class="text-gray-500">In a real application, this would load all ${surah.verses} verses of Surah ${surah.name}.</p>
+                        <p class="text-gray-500">This is a demonstration interface.</p>
+                    </div>
+                `;
+                
+                // Show the current language translation
+                const activeTab = document.querySelector('.tab-button.active');
+                if (activeTab) {
+                    const lang = activeTab.dataset.lang;
+                    document.querySelectorAll(`.translation-${lang}`).forEach(el => {
+                        el.classList.remove('hidden');
+                    });
+                }
+            });
+            
+            surahLinksContainer.appendChild(surahLink);
+        });
+
+        // Activate first surah by default
+        document.querySelector('.surah-link').click();
+    </script>
+</body>
+</html>

@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Algebra of Al-Khwarizmi - Imam and Science</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: #0a0a0a;
+            color: #e5e5e5;
+            transition: all 0.3s ease;
+        }
+        
+        body.light-mode {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .light-mode .bg-deep-black {
+            background-color: #f5f5f5;
+        }
+        
+        .light-mode .bg-dark-red {
+            background-color: #f8f1e5;
+        }
+        
+        .light-mode .text-gold-100,
+        .light-mode .gold-text {
+            color: #8b4513;
+        }
+        
+        .light-mode .red-text {
+            color: #8b0000;
+        }
+        
+        .light-mode .article-card,
+        .light-mode .testimonial-card,
+        .light-mode .feature-card {
+            background-color: #ffffff;
+            border-color: #ddd;
+            color: #333;
+        }
+        
+        .light-mode .footer-bg {
+            background-color: #e5e5e5;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://i.pinimg.com/736x/f1/b8/c1/f1b8c1c2d9321da888be9d75e49f4a59.jpg');
+            background-size: cover;
+            background-position: center;
+            border-bottom: 1px solid #b8860b;
+        }
+        
+        .light-mode .hero-section {
+            background: linear-gradient(rgba(245, 245, 245, 0.8), rgba(245, 245, 245, 0.8)), url('https://i.pinimg.com/736x/f1/b8/c1/f1b8c1c2d9321da888be9d75e49f4a59.jpg');
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(184, 134, 11, 0.2);
+            border-color: #b8860b;
+        }
+        
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+        
+        .serif {
+            font-family: 'Cinzel', serif;
+        }
+        
+        .gold-text {
+            color: #b8860b;
+        }
+        
+        .red-text {
+            color: #8b0000;
+        }
+        
+        .bg-deep-black {
+            background-color: #0a0a0a;
+        }
+        
+        .bg-dark-red {
+            background-color: #450a0a;
+        }
+        
+        .border-gold {
+            border-color: #b8860b;
+        }
+        
+        .hover-gold:hover {
+            color: #b8860b;
+        }
+        
+        .hover-red:hover {
+            color: #8b0000;
+        }
+        
+        .article-card {
+            background-color: #171717;
+            border: 1px solid #262626;
+        }
+        
+        .article-card:hover {
+            border-color: #b8860b;
+        }
+        
+        .testimonial-card {
+            background-color: #171717;
+            border: 1px solid #262626;
+        }
+        
+        .footer-bg {
+            background-color: #050505;
+            border-top: 1px solid #b8860b;
+        }
+        
+        .theme-toggle {
+            background-color: #450a0a;
+            color: #b8860b;
+            border: 1px solid #b8860b;
+        }
+        
+        .light-mode .theme-toggle {
+            background-color: #8b4513;
+            color: #f8f1e5;
+            border: 1px solid #8b4513;
+        }
+        
+        .category-badge {
+            background-color: #450a0a;
+            color: #b8860b;
+            border: 1px solid #b8860b;
+        }
+        
+        .light-mode .category-badge {
+            background-color: #8b4513;
+            color: #f8f1e5;
+            border: 1px solid #8b4513;
+        }
+        
+        .pagination-link {
+            background-color: #171717;
+            color: #b8860b;
+            border: 1px solid #262626;
+        }
+        
+        .pagination-link.active {
+            background-color: #450a0a;
+            border-color: #b8860b;
+        }
+        
+        .light-mode .pagination-link {
+            background-color: #f8f1e5;
+            color: #8b4513;
+            border: 1px solid #ddd;
+        }
+        
+        .light-mode .pagination-link.active {
+            background-color: #8b4513;
+            color: #f8f1e5;
+            border-color: #8b4513;
+        }
+        
+        /* Timeline styles */
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #b8860b;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: #450a0a;
+            border: 4px solid #b8860b;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid #b8860b;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent #b8860b;
+        }
+        
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid #b8860b;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent #b8860b transparent transparent;
+        }
+        
+        .right::after {
+            left: -16px;
+        }
+        
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: #171717;
+            position: relative;
+            border-radius: 6px;
+            border: 1px solid #262626;
+        }
+        
+        .light-mode .timeline-content {
+            background-color: #ffffff;
+            border-color: #ddd;
+        }
+        
+        .light-mode .timeline::after {
+            background-color: #8b4513;
+        }
+        
+        .light-mode .timeline-container::after {
+            background-color: #f8f1e5;
+            border-color: #8b4513;
+        }
+        
+        .light-mode .left::before,
+        .light-mode .right::before {
+            border-color: transparent transparent transparent #8b4513;
+        }
+        
+        .light-mode .right::before {
+            border-color: transparent #8b4513 transparent transparent;
+        }
+        
+        @media screen and (max-width: 600px) {
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-container::before {
+                left: 60px;
+                border: medium solid #b8860b;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent #b8860b transparent transparent;
+            }
+            
+            .left::after, .right::after {
+                left: 15px;
+            }
+            
+            .right {
+                left: 0%;
+            }
+        }
+    </style>
+</head>
+<body class="bg-deep-black">
+    <!-- Top Bar -->
+    
+    
+    <!-- Header -->
+    <header class="bg-deep-black shadow-sm border-b border-gold">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-gold-100 hover-gold font-medium">Home</a>
+                <a href="index.html#about" class="text-gold-100 hover-gold font-medium">About</a>
+                <div class="dropdown relative">
+                    <button class="text-gold-100 hover-gold font-medium flex items-center">
+                        Topics <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div class="dropdown-menu absolute hidden bg-deep-black shadow-lg rounded mt-2 py-2 w-48 border border-gold">
+                        <a href="#" class="block px-4 py-2 hover:bg-dark-red">Mathematics</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-dark-red">Astronomy</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-dark-red">Medicine</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-dark-red">Engineering</a>
+                    </div>
+                </div>
+                <a href="#" class="text-gold-100 hover-gold font-medium">Scholars</a>
+                <a href="all-topics.html" class="text-gold-100 hover-gold font-medium">Articles</a>
+                <a href="#" class="text-gold-100 hover-gold font-medium">Contact</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <button class="md:hidden text-gold-100">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+                <button id="themeToggle" class="theme-toggle px-4 py-2 rounded-full font-medium transition-all">
+                    <i class="fas fa-moon"></i> <span class="hidden md:inline">Dark Mode</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <!-- Replace the current hero-section background with your image -->
+<section class="hero-section text-gold-100 py-16" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://static.wixstatic.com/media/7335d9_e34e526af6834fbb8378ace59f3f1110~mv2.jpeg/v1/fill/w_1200,h_675,al_c,q_85,enc_avif,quality_auto/7335d9_e34e526af6834fbb8378ace59f3f1110~mv2.jpeg') center/cover;">
+  <div class="container mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 serif gold-text">The Algebra of Al-Khwarizmi</h1>
+      <p class="text-xl mb-8 max-w-3xl mx-auto">How the father of algebra revolutionized mathematics with his systematic approach to solving equations</p>
+      <div class="flex justify-center">
+          <span class="category-badge px-4 py-2 rounded-full text-sm font-medium">Mathematics</span>
+      </div>
+  </div>
+</section>
+    
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Article Content -->
+            <div class="lg:w-3/4">
+                <!-- Article Meta -->
+                <div class="flex items-center text-gold-100 text-sm mb-8">
+                    <span class="mr-4"><i class="far fa-calendar mr-1"></i> March 15, 2023</span>
+                    <span><i class="far fa-clock mr-1"></i> 8 min read</span>
+                </div>
+                
+                <!-- Featured Image -->
+                <div class="mb-8 rounded-lg overflow-hidden">
+                    <img src="https://imamandscience.com/wp-content/uploads/2023/03/algebra.jpg" alt="The Algebra of Al-Khwarizmi" class="w-full h-auto rounded-lg">
+                    <p class="text-gold-100 text-sm mt-2 italic">A page from Al-Khwarizmi's Kitab al-Jabr wa-l-Muqabala</p>
+                </div>
+                
+                <!-- Introduction -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold mb-4 gold-text">Introduction</h2>
+                    <p class="text-gold-100 mb-4">Muhammad ibn Musa al-Khwarizmi (c. 780–850 CE), a Persian mathematician, astronomer, and geographer working in the House of Wisdom in Baghdad, is widely regarded as the "father of algebra." His seminal work, "Kitab al-Jabr wa-l-Muqabala" (The Compendious Book on Calculation by Completion and Balancing), written around 820 CE, laid the foundations for algebra as a distinct mathematical discipline.</p>
+                    <p class="text-gold-100">The term "algebra" itself derives from "al-jabr," one of the two operations al-Khwarizmi used to solve quadratic equations. His systematic approach to solving linear and quadratic equations revolutionized mathematics and established principles that remain fundamental to the field today.</p>
+                </div>
+                
+                <!-- Key Contributions -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold mb-4 gold-text">Key Contributions</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div class="bg-dark-red p-6 rounded-lg border border-gold">
+                            <h3 class="text-xl font-bold mb-3 gold-text">Systematic Solutions</h3>
+                            <p class="text-gold-100">Al-Khwarizmi provided systematic solutions to linear and quadratic equations, categorizing them into six standard forms and demonstrating methods to reduce all problems to these forms.</p>
+                        </div>
+                        <div class="bg-dark-red p-6 rounded-lg border border-gold">
+                            <h3 class="text-xl font-bold mb-3 gold-text">Algorithm Concept</h3>
+                            <p class="text-gold-100">His name gave rise to the term "algorithm," reflecting his step-by-step problem-solving methods that became fundamental to computer science centuries later.</p>
+                        </div>
+                        <div class="bg-dark-red p-6 rounded-lg border border-gold">
+                            <h3 class="text-xl font-bold mb-3 gold-text">Decimal System</h3>
+                            <p class="text-gold-100">He played a crucial role in introducing the Hindu-Arabic numeral system to the Western world, including the concept of zero as a placeholder.</p>
+                        </div>
+                        <div class="bg-dark-red p-6 rounded-lg border border-gold">
+                            <h3 class="text-xl font-bold mb-3 gold-text">Practical Applications</h3>
+                            <p class="text-gold-100">Unlike Greek mathematics that focused on theory, al-Khwarizmi emphasized practical applications in fields like inheritance, land measurement, and trade.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Timeline Section -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold mb-8 gold-text text-center">Historical Timeline</h2>
+                    
+                    <div class="timeline">
+                        <!-- Item 1 -->
+                        <div class="timeline-container left">
+                            <div class="timeline-content">
+                                <h3 class="text-xl font-bold mb-2 gold-text">c. 780 CE</h3>
+                                <p class="text-gold-100">Al-Khwarizmi is born in Khwarazm (modern-day Uzbekistan) during the Islamic Golden Age.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 2 -->
+                        <div class="timeline-container right">
+                            <div class="timeline-content">
+                                <h3 class="text-xl font-bold mb-2 gold-text">813 CE</h3>
+                                <p class="text-gold-100">Appointed as a scholar in the House of Wisdom in Baghdad by Caliph al-Ma'mun, where he had access to Greek and Indian mathematical works.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 3 -->
+                        <div class="timeline-container left">
+                            <div class="timeline-content">
+                                <h3 class="text-xl font-bold mb-2 gold-text">820 CE</h3>
+                                <p class="text-gold-100">Completes "Kitab al-Jabr wa-l-Muqabala," establishing algebra as a distinct mathematical discipline.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 4 -->
+                        <div class="timeline-container right">
+                            <div class="timeline-content">
+                                <h3 class="text-xl font-bold mb-2 gold-text">830 CE</h3>
+                                <p class="text-gold-100">Publishes "On the Calculation with Hindu Numerals," introducing the decimal positional number system to the Islamic world.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 5 -->
+                        <div class="timeline-container left">
+                            <div class="timeline-content">
+                                <h3 class="text-xl font-bold mb-2 gold-text">850 CE</h3>
+                                <p class="text-gold-100">Al-Khwarizmi dies in Baghdad, leaving behind a legacy that would transform mathematics worldwide.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 6 -->
+                        <div class="timeline-container right">
+                            <div class="timeline-content">
+                                <h3 class="text-xl font-bold mb-2 gold-text">12th Century</h3>
+                                <p class="text-gold-100">Latin translations of his works introduce algebra to Europe, with "al-jabr" eventually becoming "algebra."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mathematical Concepts -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold mb-4 gold-text">Mathematical Concepts in Al-Jabr</h2>
+                    
+                    <div class="mb-6">
+                        <h3 class="text-xl font-bold mb-3 gold-text">Equation Types</h3>
+                        <p class="text-gold-100 mb-4">Al-Khwarizmi classified equations into six types, all reducible to the form ax² + bx + c = 0:</p>
+                        <ol class="list-decimal list-inside text-gold-100 space-y-2 pl-4">
+                            <li>Squares equal to roots (x² = bx)</li>
+                            <li>Squares equal to numbers (x² = c)</li>
+                            <li>Roots equal to numbers (bx = c)</li>
+                            <li>Squares and roots equal to numbers (x² + bx = c)</li>
+                            <li>Squares and numbers equal to roots (x² + c = bx)</li>
+                            <li>Roots and numbers equal to squares (bx + c = x²)</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h3 class="text-xl font-bold mb-3 gold-text">Solution Methods</h3>
+                        <p class="text-gold-100 mb-4">Al-Khwarizmi's methods combined geometric proofs with algorithmic procedures:</p>
+                        <div class="bg-dark-red p-6 rounded-lg border border-gold mb-4">
+                            <h4 class="text-lg font-bold mb-2 gold-text">Example: Solving x² + 10x = 39</h4>
+                            <p class="text-gold-100 mb-2">1. Take half of the roots (10/2 = 5)</p>
+                            <p class="text-gold-100 mb-2">2. Square it (5² = 25)</p>
+                            <p class="text-gold-100 mb-2">3. Add this to both sides (x² + 10x + 25 = 64)</p>
+                            <p class="text-gold-100 mb-2">4. Take the square root (x + 5 = 8)</p>
+                            <p class="text-gold-100">5. Solve for x (x = 3)</p>
+                        </div>
+                        <p class="text-gold-100">This method, now known as completing the square, demonstrates al-Khwarizmi's systematic approach that would later evolve into the quadratic formula.</p>
+                    </div>
+                </div>
+                
+                <!-- Legacy and Influence -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold mb-4 gold-text">Legacy and Influence</h2>
+                    <p class="text-gold-100 mb-4">Al-Khwarizmi's work had profound and lasting impacts:</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                        <div class="bg-dark-red p-6 rounded-lg border border-gold">
+                            <h3 class="text-xl font-bold mb-3 gold-text">Mathematical Education</h3>
+                            <p class="text-gold-100">His books became standard texts in Islamic madrasas and later European universities for centuries.</p>
+                        </div>
+                        <div class="bg-dark-red p-6 rounded-lg border border-gold">
+                            <h3 class="text-xl font-bold mb-3 gold-text">Scientific Revolution</h3>
+                            <p class="text-gold-100">Algebra became essential for later scientific developments in astronomy, physics, and engineering.</p>
+                        </div>
+                        <div class="bg-dark-red p-6 rounded-lg border border-gold">
+                            <h3 class="text-xl font-bold mb-3 gold-text">Modern Mathematics</h3>
+                            <p class="text-gold-100">Abstract algebra and computer science both trace conceptual roots to al-Khwarizmi's systematic methods.</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gold-100">The lunar crater Al-Khwarizmi and the asteroid 13498 Al Chwarizmi are named in his honor, as is the prestigious Khwarizmi International Award given annually in Iran for outstanding achievements in research and innovation.</p>
+                </div>
+                
+                <!-- Related Articles -->
+                <div class="mb-8 bg-dark-red p-6 rounded-lg border border-gold">
+                    <h2 class="text-2xl font-bold mb-6 gold-text">Related Articles</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <article class="article-card rounded-lg overflow-hidden transition-all">
+                            <div class="relative">
+                                <img src="https://imamandscience.com/wp-content/uploads/2023/03/astronomy.jpg" alt="Islamic Astronomy" class="w-full h-32 object-cover">
+                                <div class="absolute bottom-0 left-0 bg-dark-red text-gold-100 px-3 py-1 text-sm font-medium">
+                                    Astronomy
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h3 class="text-lg font-bold mb-2 gold-text">The Astronomical Tables of Al-Battani</h3>
+                                <p class="text-gold-100 mb-3 text-sm">How Muslim astronomers calculated celestial movements with unprecedented accuracy.</p>
+                                <a href="#" class="text-sm gold-text hover:underline">Read More →</a>
+                            </div>
+                        </article>
+                        
+                        <article class="article-card rounded-lg overflow-hidden transition-all">
+                            <div class="relative">
+                                <img src="https://imamandscience.com/wp-content/uploads/2023/03/medicine.jpg" alt="Islamic Medicine" class="w-full h-32 object-cover">
+                                <div class="absolute bottom-0 left-0 bg-dark-red text-gold-100 px-3 py-1 text-sm font-medium">
+                                    Medicine
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h3 class="text-lg font-bold mb-2 gold-text">Ibn Sina's Canon of Medicine</h3>
+                                <p class="text-gold-100 mb-3 text-sm">The medical encyclopedia that shaped European medicine for 600 years.</p>
+                                <a href="#" class="text-sm gold-text hover:underline">Read More →</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sidebar -->
+            <aside class="lg:w-1/4">
+                <!-- Scholar Profile -->
+                <div class="mb-8 bg-dark-red p-6 rounded-lg border border-gold">
+                    <h2 class="text-xl font-bold mb-4 gold-text">About Al-Khwarizmi</h2>
+                    <div class="flex flex-col items-center mb-4">
+                       
+                            <img src="https://static.wixstatic.com/media/7335d9_d805c34d74434cdaa0fbdadbfbb03cba~mv2.jpeg/v1/fill/w_671,h_693,al_c,lg_1,q_85,enc_avif,quality_auto/7335d9_d805c34d74434cdaa0fbdadbfbb03cba~mv2.jpeg" 
+                                 alt="Al-Khwarizmi" 
+                                 class="w-32 h-32 rounded-full object-cover mb-3 border-2 border-gold">
+                            <h3 class="text-lg font-bold gold-text">Muhammad ibn Musa al-Khwarizmi</h3>
+                            <p class="text-gold-100 text-sm">(c. 780–850 CE)</p>
+                        </div>" alt="Al-Khwarizmi" class="w-32 h-32 rounded-full object-cover mb-3 border-2 border-gold">
+                        <h3 class="text-lg font-bold gold-text">Muhammad ibn Musa al-Khwarizmi</h3>
+                        <p class="text-gold-100 text-sm">(c. 780–850 CE)</p>
+                    </div>
+                    <p class="text-gold-100 mb-4">Persian mathematician, astronomer, and geographer who served as a scholar in the House of Wisdom in Baghdad during the Islamic Golden Age.</p>
+                    <div class="space-y-2">
+                        <p class="text-gold-100"><span class="font-bold gold-text">Known for:</span> Algebra, Algorithms, Trigonometry</p>
+                        <p class="text-gold-100"><span class="font-bold gold-text">Major works:</span> Kitab al-Jabr wa-l-Muqabala, On the Calculation with Hindu Numerals</p>
+                        <p class="text-gold-100"><span class="font-bold gold-text">Influenced:</span> Mathematics, Computer Science, Astronomy</p>
+                    </div>
+                </div>
+                
+                <!-- Key Facts -->
+                <div class="mb-8 bg-dark-red p-6 rounded-lg border border-gold">
+                    <h2 class="text-xl font-bold mb-4 gold-text">Key Facts</h2>
+                    <ul class="space-y-3 text-gold-100">
+                        <li class="flex items-start">
+                            <i class="fas fa-atom text-gold-100 mt-1 mr-3"></i>
+                            <span>The word "algebra" comes from the title of his book "al-Jabr"</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-calculator text-gold-100 mt-1 mr-3"></i>
+                            <span>The term "algorithm" derives from a Latinization of his name</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-globe text-gold-100 mt-1 mr-3"></i>
+                            <span>Introduced the decimal positional number system to the Islamic world</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-book text-gold-100 mt-1 mr-3"></i>
+                            <span>His works were translated into Latin and became standard European mathematical texts</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-star text-gold-100 mt-1 mr-3"></i>
+                            <span>Considered the founder of algebra as an independent discipline</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- References -->
+                <div class="mb-8 bg-dark-red p-6 rounded-lg border border-gold">
+                    <h2 class="text-xl font-bold mb-4 gold-text">References</h2>
+                    <ul class="space-y-2 text-gold-100 text-sm">
+                        <li>Berggren, J. L. (1986). <em>Episodes in the Mathematics of Medieval Islam</em>. Springer.</li>
+                        <li>Rashed, R. (2009). <em>Al-Khwarizmi: The Beginnings of Algebra</em>. Saqi Books.</li>
+                        <li>Katz, V. J. (1998). <em>A History of Mathematics: An Introduction</em>. Addison-Wesley.</li>
+                        <li>O'Connor, J. J., & Robertson, E. F. (1999). "Al-Khwarizmi". MacTutor History of Mathematics archive.</li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter -->
+                <div class="bg-dark-red p-6 rounded-lg border border-gold">
+                    <h2 class="text-xl font-bold mb-4 gold-text">Newsletter</h2>
+                    <p class="text-gold-100 text-sm mb-4">Subscribe to our newsletter to receive updates on new articles about Islamic scientific heritage.</p>
+                    <form>
+                        <input type="email" placeholder="Your email address" class="w-full px-4 py-2 mb-2 rounded-full bg-deep-black text-gold-100 border border-gold focus:outline-none">
+                        <button type="submit" class="w-full bg-deep-black hover:bg-gray-900 text-gold-100 px-4 py-2 rounded-full font-medium transition-all border border-gold">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </aside>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer-bg pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- About Column -->
+                <div>
+                    <img src="https://chatgpt.com/s/m_6832b7dfed9881919cadca003227632c" alt="Imam and Science Logo" class="h-10 mb-4">
+                    <p class="text-gold-100 mb-4">Exploring the rich scientific heritage of Islamic civilization through well-researched articles and resources.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gold-100 hover-gold"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gold-100 hover-gold"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gold-100 hover-gold"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4 gold-text">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gold-100 hover-gold">Home</a></li>
+                        <li><a href="#" class="text-gold-100 hover-gold">About</a></li>
+                        <li><a href="#" class="text-gold-100 hover-gold">Topics</a></li>
+                        <li><a href="#" class="text-gold-100 hover-gold">Scholars</a></li>
+                        <li><a href="all-topics.html" class="text-gold-100 hover-gold">Articles</a></li>
+                    </ul>
+                </div>
+
+                <!-- Topics -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4 gold-text">Topics</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gold-100 hover-gold">Mathematics</a></li>
+                        <li><a href="#" class="text-gold-100 hover-gold">Astronomy</a></li>
+                        <li><a href="#" class="text-gold-100 hover-gold">Medicine</a></li>
+                        <li><a href="#" class="text-gold-100 hover-gold">Engineering</a></li>
+                        <li><a href="#" class="text-gold-100 hover-gold">Philosophy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4 gold-text">Contact</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope text-gold-100 mt-1 mr-3"></i>
+                            <span class="text-gold-100">contact@imamandscience.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-globe text-gold-100 mt-1 mr-3"></i>
+                            <span class="text-gold-100">www.imamandscience.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gold-100 mb-4 md:mb-0">© 2023 Imam and Science. All rights reserved.</p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gold-100 hover-gold">Privacy Policy</a>
+                        <a href="#" class="text-gold-100 hover-gold">Terms of Use</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggle = document.getElementById('themeToggle');
+            const icon = themeToggle.querySelector('i');
+            const textSpan = themeToggle.querySelector('span');
+
+            // Check for saved theme preference or use preferred color scheme
+            if (localStorage.getItem('theme') === 'light' || 
+                (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+                document.body.classList.add('light-mode');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                textSpan.textContent = 'Light Mode';
+            }
+
+            // Toggle theme on button click
+            themeToggle.addEventListener('click', function() {
+                document.body.classList.toggle('light-mode');
+
+                if (document.body.classList.contains('light-mode')) {
+                    localStorage.setItem('theme', 'light');
+                    icon.classList.remove('fa-moon');
+                    icon.classList.add('fa-sun');
+                    textSpan.textContent = 'Light Mode';
+                } else {
+                    localStorage.setItem('theme', 'dark');
+                    icon.classList.remove('fa-sun');
+                    icon.classList.add('fa-moon');
+                    textSpan.textContent = 'Dark Mode';
+                }
+            });
+
+            // Mobile menu toggle
+            const mobileMenuButton = document.querySelector('.md\\:hidden');
+            const mobileMenu = document.querySelector('nav');
+
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('block');
+                mobileMenu.classList.toggle('absolute');
+                mobileMenu.classList.toggle('bg-deep-black');
+                mobileMenu.classList.toggle('shadow-lg');
+                mobileMenu.classList.toggle('w-full');
+                mobileMenu.classList.toggle('left-0');
+                mobileMenu.classList.toggle('px-4');
+                mobileMenu.classList.toggle('py-4');
+                mobileMenu.classList.toggle('z-50');
+                mobileMenu.classList.toggle('border');
+                mobileMenu.classList.toggle('border-gold');
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

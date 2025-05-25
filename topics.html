@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Topics - Imam and Science</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: #0a0a0a;
+            color: #e5e5e5;
+            transition: all 0.3s ease;
+        }
+        
+        body.light-mode {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .light-mode .bg-deep-black {
+            background-color: #f5f5f5;
+        }
+        
+        .light-mode .bg-dark-red {
+            background-color: #f8f1e5;
+        }
+        
+        .light-mode .text-gold-100,
+        .light-mode .gold-text {
+            color: #8b4513;
+        }
+        
+        .light-mode .red-text {
+            color: #8b0000;
+        }
+        
+        .light-mode .article-card,
+        .light-mode .testimonial-card,
+        .light-mode .feature-card {
+            background-color: #ffffff;
+            border-color: #ddd;
+            color: #333;
+        }
+        
+        .light-mode .footer-bg {
+            background-color: #e5e5e5;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://i.pinimg.com/736x/f1/b8/c1/f1b8c1c2d9321da888be9d75e49f4a59.jpg');
+            background-size: cover;
+            background-position: center;
+            border-bottom: 1px solid #b8860b;
+        }
+        
+        .light-mode .hero-section {
+            background: linear-gradient(rgba(245, 245, 245, 0.8), rgba(245, 245, 245, 0.8)), url('https://i.pinimg.com/736x/f1/b8/c1/f1b8c1c2d9321da888be9d75e49f4a59.jpg');
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(184, 134, 11, 0.2);
+            border-color: #b8860b;
+        }
+        
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+        
+        .serif {
+            font-family: 'Cinzel', serif;
+        }
+        
+        .gold-text {
+            color: #b8860b;
+        }
+        
+        .red-text {
+            color: #8b0000;
+        }
+        
+        .bg-deep-black {
+            background-color: #0a0a0a;
+        }
+        
+        .bg-dark-red {
+            background-color: #450a0a;
+        }
+        
+        .border-gold {
+            border-color: #b8860b;
+        }
+        
+        .hover-gold:hover {
+            color: #b8860b;
+        }
+        
+        .hover-red:hover {
+            color: #8b0000;
+        }
+        
+        .article-card {
+            background-color: #171717;
+            border: 1px solid #262626;
+        }
+        
+        .article-card:hover {
+            border-color: #b8860b;
+        }
+        
+        .testimonial-card {
+            background-color: #171717;
+            border: 1px solid #262626;
+        }
+        
+        .footer-bg {
+            background-color: #050505;
+            border-top: 1px solid #b8860b;
+        }
+        
+        .theme-toggle {
+            background-color: #450a0a;
+            color: #b8860b;
+            border: 1px solid #b8860b;
+        }
+        
+        .light-mode .theme-toggle {
+            background-color: #8b4513;
+            color: #f8f1e5;
+            border: 1px solid #8b4513;
+        }
+        
+        .category-badge {
+            background-color: #450a0a;
+            color: #b8860b;
+            border: 1px solid #b8860b;
+        }
+        
+        .light-mode .category-badge {
+            background-color: #8b4513;
+            color: #f8f1e5;
+            border: 1px solid #8b4513;
+        }
+        
+        .pagination-link {
+            background-color: #171717;
+            color: #b8860b;
+            border: 1px solid #262626;
+        }
+        
+        .pagination-link.active {
+            background-color: #450a0a;
+            border-color: #b8860b;
+        }
+        
+        .light-mode .pagination-link {
+            background-color: #f8f1e5;
+            color: #8b4513;
+            border: 1px solid #ddd;
+        }
+        
+        .light-mode .pagination-link.active {
+            background-color: #8b4513;
+            color: #f8f1e5;
+            border-color: #8b4513;
+        }
+    </style>
+</head>
+<body class="bg-deep-black">
+    <!-- Top Bar -->
+    
+    <!-- Header -->
+    <header class="bg-deep-black shadow-sm border-b border-gold">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://chatgpt.com/s/m_6832b7dfed9881919cadca003227632c" alt="Imam and Science Logo" class="h-12">
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-gold-100 hover-gold font-medium">Home</a>
+                <a href="#" class="text-gold-100 hover-gold font-medium">About</a>
+                <div class="dropdown relative">
+                    <button class="text-gold-100 hover-gold font-medium flex items-center">
+                        Topics <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div class="dropdown-menu absolute hidden bg-deep-black shadow-lg rounded mt-2 py-2 w-48 border border-gold">
+                        <a href="#" class="block px-4 py-2 hover:bg-dark-red">Mathematics</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-dark-red">Astronomy</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-dark-red">Medicine</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-dark-red">Engineering</a>
+                    </div>
+                </div>
+                <a href="#" class="text-gold-100 hover-gold font-medium">Scholars</a>
+                <a href="all-topics.html" class="text-gold-100 hover-gold font-medium">Articles</a>
+                <a href="#" class="text-gold-100 hover-gold font-medium">Contact</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <button class="md:hidden text-gold-100">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+                <button id="themeToggle" class="theme-toggle px-4 py-2 rounded-full font-medium transition-all">
+                    <i class="fas fa-moon"></i> <span class="hidden md:inline">Dark Mode</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero-section text-gold-100 py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 serif gold-text">All Articles</h1>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">Explore our comprehensive collection of articles on Islamic scientific heritage</p>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Articles Section -->
+            <div class="lg:w-3/4">
+                <!-- Category Filter -->
+                <div class="mb-8 bg-dark-red p-4 rounded-lg border border-gold">
+                    <h2 class="text-xl font-bold mb-4 gold-text">Filter by Category</h2>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="#" class="category-badge px-4 py-2 rounded-full text-sm font-medium">All</a>
+                        <a href="#" class="category-badge px-4 py-2 rounded-full text-sm font-medium">Mathematics</a>
+                        <a href="#" class="category-badge px-4 py-2 rounded-full text-sm font-medium">Astronomy</a>
+                        <a href="#" class="category-badge px-4 py-2 rounded-full text-sm font-medium">Medicine</a>
+                        <a href="#" class="category-badge px-4 py-2 rounded-full text-sm font-medium">Engineering</a>
+                        <a href="#" class="category-badge px-4 py-2 rounded-full text-sm font-medium">Philosophy</a>
+                        <a href="#" class="category-badge px-4 py-2 rounded-full text-sm font-medium">Chemistry</a>
+                    </div>
+                </div>
+                
+                <!-- Articles Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <!-- Article 1 -->
+                    <article class="article-card rounded-lg overflow-hidden transition-all">
+                        <div class="relative">
+                            <img src="https://imamandscience.com/wp-content/uploads/2023/03/algebra.jpg" alt="The Algebra of Al-Khwarizmi" class="w-full h-48 object-cover">
+                            <div class="absolute bottom-0 left-0 bg-dark-red text-gold-100 px-3 py-1 text-sm font-medium">
+                                Mathematics
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 gold-text">The Algebra of Al-Khwarizmi</h3>
+                            <p class="text-gold-100 mb-4 text-sm">How the father of algebra revolutionized mathematics with his systematic approach to solving equations.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gold-100 text-xs">March 15, 2023</span>
+                                <a href="khwarizmi.html" class="text-sm gold-text hover:underline">Read More →</a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Article 2 -->
+                    <article class="article-card rounded-lg overflow-hidden transition-all">
+                        <div class="relative">
+                            <img src="https://imamandscience.com/wp-content/uploads/2023/03/medicine.jpg" alt="Ibn Sina's Canon of Medicine" class="w-full h-48 object-cover">
+                            <div class="absolute bottom-0 left-0 bg-dark-red text-gold-100 px-3 py-1 text-sm font-medium">
+                                Medicine
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 gold-text">Ibn Sina's Canon of Medicine</h3>
+                            <p class="text-gold-100 mb-4 text-sm">Exploring the medical encyclopedia that remained a standard text in Europe for over 600 years.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gold-100 text-xs">February 28, 2023</span>
+                                <a href="#" class="text-sm gold-text hover:underline">Read More →</a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Article 3 -->
+                    <article class="article-card rounded-lg overflow-hidden transition-all">
+                        <div class="relative">
+                            <img src="https://imamandscience.com/wp-content/uploads/2023/03/astrolabe.jpg" alt="Astrolabes and Islamic Astronomy" class="w-full h-48 object-cover">
+                            <div class="absolute bottom-0 left-0 bg-dark-red text-gold-100 px-3 py-1 text-sm font-medium">
+                                Astronomy
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 gold-text">Astrolabes and Islamic Astronomy</h3>
+                            <p class="text-gold-100 mb-4 text-sm">The sophisticated instruments Muslim astronomers developed to map the stars and navigate the seas.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gold-100 text-xs">January 22, 2023</span>
+                                <a href="#" class="text-sm gold-text hover:underline">Read More →</a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Article 4 -->
+                    <article class="article-card rounded-lg overflow-hidden transition-all">
+                        <div class="relative">
+                            <img src="https://imamandscience.com/wp-content/uploads/2023/03/engineering.jpg" alt="Islamic Architectural Innovations" class="w-full h-48 object-cover">
+                            <div class="absolute bottom-0 left-0 bg-dark-red text-gold-100 px-3 py-1 text-sm font-medium">
+                                Engineering
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 gold-text">Islamic Architectural Innovations</h3>
+                            <p class="text-gold-100 mb-4 text-sm">How Muslim engineers revolutionized building techniques with arches, domes, and geometric patterns.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gold-100 text-xs">December 5, 2022</span>
+                                <a href="#" class="text-sm gold-text hover:underline">Read More →</a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Article 5 -->
+                    <article class="article-card rounded-lg overflow-hidden transition-all">
+                        <div class="relative">
+                            <img src="https://imamandscience.com/wp-content/uploads/2023/03/alchemy.jpg" alt="From Alchemy to Chemistry" class="w-full h-48 object-cover">
+                            <div class="absolute bottom-0 left-0 bg-dark-red text-gold-100 px-3 py-1 text-sm font-medium">
+                                Chemistry
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 gold-text">From Alchemy to Chemistry</h3>
+                            <p class="text-gold-100 mb-4 text-sm">The contributions of Jabir ibn Hayyan and other Muslim chemists to the foundations of modern chemistry.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gold-100 text-xs">November 18, 2022</span>
+                                <a href="#" class="text-sm gold-text hover:underline">Read More →</a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Article 6 -->
+                    <article class="article-card rounded-lg overflow-hidden transition-all">
+                        <div class="relative">
+                            <img src="https://imamandscience.com/wp-content/uploads/2023/03/philosophy.jpg" alt="Islamic Philosophy and Science" class="w-full h-48 object-cover">
+                            <div class="absolute bottom-0 left-0 bg-dark-red text-gold-100 px-3 py-1 text-sm font-medium">
+                                Philosophy
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 gold-text">Islamic Philosophy and Science</h3>
+                            <p class="text-gold-100 mb-4 text-sm">How Muslim philosophers reconciled reason and revelation, influencing both Islamic and Western thought.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gold-100 text-xs">October 30, 2022</span>
+                                <a href="#" class="text-sm gold-text hover:underline">Read More →</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                
+                <!-- Pagination -->
+                <div class="flex justify-center mt-8">
+                    <nav class="flex items-center space-x-2">
+                        <a href="#" class="pagination-link px-4 py-2 rounded-full text-sm font-medium">&laquo;</a>
+                        <a href="#" class="pagination-link px-4 py-2 rounded-full text-sm font-medium">1</a>
+                        <a href="#" class="pagination-link active px-4 py-2 rounded-full text-sm font-medium">2</a>
+                        <a href="#" class="pagination-link px-4 py-2 rounded-full text-sm font-medium">3</a>
+                        <a href="#" class="pagination-link px-4 py-2 rounded-full text-sm font-medium">&raquo;</a>
+                    </nav>
+                </div>
+            </div>
+            
+            <!-- Sidebar -->
+            <aside class="lg:w-1/4">
+                <!-- Search -->
+                <div class="mb-8 bg-dark-red p-4 rounded-lg border border-gold">
+                    <h2 class="text-xl font-bold mb-4 gold-text">Search Articles</h2>
+                    <form class="flex">
+                        <input type="text" placeholder="Search..." class="flex-grow px-4 py-2 rounded-l-full bg-deep-black text-gold-100 border border-gold focus:outline-none">
+                        <button type="submit" class="bg-deep-black hover:bg-gray-900 text-gold-100 px-4 py-2 rounded-r-full border border-gold">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Popular Articles -->
+                <div class="mb-8 bg-dark-red p-4 rounded-lg border border-gold">
+                    <h2 class="text-xl font-bold mb-4 gold-text">Popular Articles</h2>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="#" class="flex items-start group">
+                                <div class="w-16 h-16 flex-shrink-0 mr-3">
+                                    <img src="https://imamandscience.com/wp-content/uploads/2023/03/algebra-thumb.jpg" alt="The Algebra of Al-Khwarizmi" class="w-full h-full object-cover rounded">
+                                </div>
+                                <div>
+                                    <h3 class="text-sm font-medium gold-text group-hover:underline">The Algebra of Al-Khwarizmi</h3>
+                                    <p class="text-xs text-gold-100">March 15, 2023</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-start group">
+                                <div class="w-16 h-16 flex-shrink-0 mr-3">
+                                    <img src="https://imamandscience.com/wp-content/uploads/2023/03/medicine-thumb.jpg" alt="Ibn Sina's Canon of Medicine" class="w-full h-full object-cover rounded">
+                                </div>
+                                <div>
+                                    <h3 class="text-sm font-medium gold-text group-hover:underline">Ibn Sina's Canon of Medicine</h3>
+                                    <p class="text-xs text-gold-100">February 28, 2023</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-start group">
+                                <div class="w-16 h-16 flex-shrink-0 mr-3">
+                                    <img src="https://imamandscience.com/wp-content/uploads/2023/03/astrolabe-thumb.jpg" alt="Astrolabes and Islamic Astronomy" class="w-full h-full object-cover rounded">
+                                </div>
+                                <div>
+                                    <h3 class="text-sm font-medium gold-text group-hover:underline">Astrolabes and Islamic Astronomy</h3>
+                                    <p class="text-xs text-gold-100">January 22, 2023</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Categories -->
+                <div class="mb-8 bg-dark-red p-4 rounded-lg border border-gold">
+                    <h2 class="text-xl font-bold mb-4 gold-text">Categories</h2>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="#" class="flex justify-between items-center text-gold-100 hover-gold">
+                                <span>Mathematics</span>
+                                <span class="bg-deep-black text-gold-100 text-xs px-2 py-1 rounded-full">24</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex justify-between items-center text-gold-100 hover-gold">
+                                <span>Astronomy</span>
+                                <span class="bg-deep-black text-gold-100 text-xs px-2 py-1 rounded-full">18</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex justify-between items-center text-gold-100 hover-gold">
+                                <span>Medicine</span>
+                                <span class="bg-deep-black text-gold-100 text-xs px-2 py-1 rounded-full">32</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex justify-between items-center text-gold-100 hover-gold">
+                                <span>Engineering</span>
+                                <span class="bg-deep-black text-gold-100 text-xs px-2 py-1 rounded-full">15</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex justify-between items-center text-gold-100 hover-gold">
+                                <span>Philosophy</span>
+                                <span class="bg-deep-black text-gold-100 text-xs px-2 py-1 rounded-full">21</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex justify-between items-center text-gold-100 hover-gold">
+                                <span>Chemistry</span>
+                                <span class="bg-deep-black text-gold-100 text-xs px-2 py-1 rounded-full">12</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter -->
+                <div class="bg-dark-red p-4 rounded-lg border border-gold">
+                    <h2 class="text-xl font-bold mb-4 gold-text">Newsletter</h2>
+                    <p class="text-gold-100 text-sm mb-4">Subscribe to our newsletter to receive updates on new articles and research.</p>
+                    <form>
+                        <input type="email" placeholder="Your email address" class="w-full px-4 py-2 mb-2 rounded-full bg-deep-black text-gold-100 border border-gold focus:outline-none">
+                        <button type="submit" class="w-full bg-deep-black hover:bg-gray-900 text-gold-100 px-4 py-2 rounded-full font-medium transition-all border border-gold">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </aside>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer-bg pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- About Column -->
+                <div>
+                    <img src="https://chatgpt.com/s/m_6832b7dfed9881919cadca003227632c" alt="Imam and Science Logo" class="h-10 mb-4">
+                    <p class="text-gold-100 mb-4">Exploring the rich scientific heritage of Islamic civilization through well-researched articles and resources.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gold-100 hover-gold"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gold-100 hover-gold"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gold-100 hover-gold"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4 gold-text">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gold-100 hover-gold">Home</a></li>
+                        <li><a href="#" class="text-gold-100 hover-gold">About</a></li>
+                        <li><a href="#" class="text-gold-100 hover-gold">Topics</a></li>
+                        <li><a href="#" class="text-gold-100 hover-gold">Scholars</a></li>
+                        <li><a href="all-topics.html" class="text-gold-100 hover-gold">Articles</a></li>
+                    </ul>
+                </div>
+
+                <!-- Topics -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4 gold-text">Topics</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gold-100 hover-gold">Mathematics</a></li>
+                        <li><a href="#" class="text-gold-100 hover-gold">Astronomy</a></li>
+                        <li><a href="#" class="text-gold-100 hover-gold">Medicine</a></li>
+                        <li><a href="#" class="text-gold-100 hover-gold">Engineering</a></li>
+                        <li><a href="#" class="text-gold-100 hover-gold">Philosophy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4 gold-text">Contact</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope text-gold-100 mt-1 mr-3"></i>
+                            <span class="text-gold-100">contact@imamandscience.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-globe text-gold-100 mt-1 mr-3"></i>
+                            <span class="text-gold-100">www.imamandscience.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gold-100 mb-4 md:mb-0">© 2023 Imam and Science. All rights reserved.</p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gold-100 hover-gold">Privacy Policy</a>
+                        <a href="#" class="text-gold-100 hover-gold">Terms of Use</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggle = document.getElementById('themeToggle');
+            const icon = themeToggle.querySelector('i');
+            const textSpan = themeToggle.querySelector('span');
+
+            // Check for saved theme preference or use preferred color scheme
+            if (localStorage.getItem('theme') === 'light' || 
+                (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+                document.body.classList.add('light-mode');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                textSpan.textContent = 'Light Mode';
+            }
+
+            // Toggle theme on button click
+            themeToggle.addEventListener('click', function() {
+                document.body.classList.toggle('light-mode');
+
+                if (document.body.classList.contains('light-mode')) {
+                    localStorage.setItem('theme', 'light');
+                    icon.classList.remove('fa-moon');
+                    icon.classList.add('fa-sun');
+                    textSpan.textContent = 'Light Mode';
+                } else {
+                    localStorage.setItem('theme', 'dark');
+                    icon.classList.remove('fa-sun');
+                    icon.classList.add('fa-moon');
+                    textSpan.textContent = 'Dark Mode';
+                }
+            });
+
+            // Mobile menu toggle
+            const mobileMenuButton = document.querySelector('.md\\:hidden');
+            const mobileMenu = document.querySelector('nav');
+
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('block');
+                mobileMenu.classList.toggle('absolute');
+                mobileMenu.classList.toggle('bg-deep-black');
+                mobileMenu.classList.toggle('shadow-lg');
+                mobileMenu.classList.toggle('w-full');
+                mobileMenu.classList.toggle('left-0');
+                mobileMenu.classList.toggle('px-4');
+                mobileMenu.classList.toggle('py-4');
+                mobileMenu.classList.toggle('z-50');
+                mobileMenu.classList.toggle('border');
+                mobileMenu.classList.toggle('border-gold');
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
